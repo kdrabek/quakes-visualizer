@@ -1,3 +1,5 @@
+const { join } = require('path');
+
 module.exports = {
   use: [
     '@neutrinojs/airbnb',
@@ -9,6 +11,18 @@ module.exports = {
         }
       }
     ],
-    '@neutrinojs/jest'
-  ]
+    [
+      '@neutrinojs/jest', {
+        setupFiles: [
+          '<rootDir>/jest.config.js'
+        ],
+        snapshotSerializers: [
+          require.resolve('enzyme-to-json/serializer')
+        ]
+      }
+    ]
+  ],
+  options: {
+    tests: '/src'
+  },
 };

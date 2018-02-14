@@ -1,6 +1,8 @@
+import 'raf/polyfill';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import App from './App';
+import App from './components/App';
+
 
 const root = document.getElementById('root');
 const load = () => render(
@@ -13,7 +15,7 @@ const load = () => render(
 
 // This is needed for Hot Module Replacement
 if (module.hot) {
-  module.hot.accept('./App', load);
+  module.hot.accept('./components/App', load);
 }
 
 load();

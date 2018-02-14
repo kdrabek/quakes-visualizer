@@ -1,5 +1,8 @@
+import Button from 'material-ui/Button';
+
 import { Component } from 'react';
 import './App.css';
+
 
 export default class App extends Component {
   state = {
@@ -10,6 +13,9 @@ export default class App extends Component {
     return (
       <div className="App">
         <h1>Welcome to {this.state.name}</h1>
+        <Button variant="raised" color="primary">
+          Hello World
+        </Button>
       </div>
     );
   }
