@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Options component should match snapshot 1`] = `
+<form
+  autoComplete="off"
+>
+  <WithStyles(FormControl)>
+    <WithStyles(InputLabel)
+      htmlFor="magnitude"
+    >
+      Magnitude
+    </WithStyles(InputLabel)>
+    <WithStyles(Select)
+      inputProps={
+        Object {
+          "id": "magnitudeSelect",
+          "name": "magnitude",
+        }
+      }
+      onChange={[Function]}
+      value={5}
+    >
+      <WithStyles(MenuItem)
+        key="1"
+        value={1}
+      >
+        1
+      </WithStyles(MenuItem)>
+      <WithStyles(MenuItem)
+        key="2"
+        value={2}
+      >
+        2
+      </WithStyles(MenuItem)>
+      <WithStyles(MenuItem)
+        key="3"
+        value={3}
+      >
+        3
+      </WithStyles(MenuItem)>
+      <WithStyles(MenuItem)
+        key="4"
+        value={4}
+      >
+        4
+      </WithStyles(MenuItem)>
+      <WithStyles(MenuItem)
+        key="5"
+        value={5}
+      >
+        5
+      </WithStyles(MenuItem)>
+      <WithStyles(MenuItem)
+        key="6"
+        value={6}
+      >
+        6
+      </WithStyles(MenuItem)>
+      <WithStyles(MenuItem)
+        key="7"
+        value={7}
+      >
+        7
+      </WithStyles(MenuItem)>
+      <WithStyles(MenuItem)
+        key="8"
+        value={8}
+      >
+        8
+      </WithStyles(MenuItem)>
+      <WithStyles(MenuItem)
+        key="9"
+        value={9}
+      >
+        9
+      </WithStyles(MenuItem)>
+      <WithStyles(MenuItem)
+        key="10"
+        value={10}
+      >
+        10
+      </WithStyles(MenuItem)>
+    </WithStyles(Select)>
+  </WithStyles(FormControl)>
+  <DatePickerWrapper
+    autoOk={false}
+    disableFuture={true}
+    format="YYYY-MM-DD"
+    label="Choose a date"
+    minDate="1900-01-01"
+    onChange={[Function]}
+    returnMoment={true}
+    utils={
+      Object {
+        "formatNumber": [Function],
+        "getCalendarHeaderText": [Function],
+        "getDatePickerHeaderText": [Function],
+        "getDateTimePickerHeaderText": [Function],
+        "getDayText": [Function],
+        "getHourText": [Function],
+        "getMeridiemText": [Function],
+        "getMinuteText": [Function],
+        "getMonthNumber": [Function],
+        "getNextMonth": [Function],
+        "getPreviousMonth": [Function],
+        "getStartOfMonth": [Function],
+        "getWeekArray": [Function],
+        "getWeekdays": [Function],
+        "getYear": [Function],
+        "getYearText": [Function],
+        "setYear": [Function],
+      }
+    }
+    value={2018-02-19T10:20:34.379Z}
+  />
+  <WithStyles(Button)
+    color="primary"
+    onClick={[Function]}
+  >
+    Submit
+  </WithStyles(Button)>
+</form>
+`;

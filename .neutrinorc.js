@@ -20,7 +20,16 @@ module.exports = {
           require.resolve('enzyme-to-json/serializer')
         ]
       }
-    ]
+    ],
+    ['neutrino-middleware-html-template', {
+      links: [
+        {
+          href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+          rel: 'stylesheet'
+        }
+      ]
+    }],
+
   ],
   options: {
     tests: '/src'

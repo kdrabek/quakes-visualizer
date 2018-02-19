@@ -1,21 +1,24 @@
-import Button from 'material-ui/Button';
-
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import './App.css';
 
+import Title from './Title';
+import Options from './Options';
 
-export default class App extends Component {
+
+export default class App extends PureComponent {
   state = {
     name: 'earthquake',
   };
 
   render() {
     return (
-      <div className="App">
-        <h1>Welcome to {this.state.name}</h1>
-        <Button variant="raised" color="primary">
-          Hello World
-        </Button>
+      <div className="wrapper">
+        <Title />
+        <Options />
+        <div className="list">
+          {this.state.name}
+        </div>
+        <div className="map">2</div>
       </div>
     );
   }

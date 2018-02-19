@@ -1,3 +1,22 @@
-.App {
-  padding: 20px;
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 1fr 1fr 10fr;
+}
+
+.map {
+  background-color: #DD2020;
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+}
+
+.list {
+  background-color: #7b6500;
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  overflow: auto;
 }
