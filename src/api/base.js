@@ -12,7 +12,7 @@ function parse(resp) {
 }
 
 
-function makeImmutable(resp) {
+function toImmutable(resp) {
   return Immutable.fromJS(resp.data);
 }
 
@@ -26,7 +26,7 @@ function checkStatus(resp) {
 
 
 function processResponse(resp) {
-  return resp.then(parse).then(checkStatus).then(makeImmutable);
+  return resp.then(parse).then(checkStatus).then(toImmutable);
 }
 
 
