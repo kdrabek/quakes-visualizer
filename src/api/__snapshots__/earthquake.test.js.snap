@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(GET) earthquakes called with proper parameters 1`] = `
+Array [
+  Array [
+    "localhost:8080/query?endtime=2018-02-20&format=geojson&minmagnitude=5&starttime=2018-02-20",
+    Object {
+      "header": Object {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+      },
+      "method": "GET",
+    },
+  ],
+]
+`;

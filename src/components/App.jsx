@@ -15,6 +15,7 @@ export default class App extends PureComponent {
       <div className="wrapper">
         <Title />
         <Options />
+
         <div className="list">
           {this.state.name}
         </div>

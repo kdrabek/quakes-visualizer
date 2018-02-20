@@ -7,13 +7,19 @@ import { makeRequest } from './base';
 describe('makeRequest helper', () => {
   global.fetch = fetchMock;
 
-  const testRequest = (data, queryParams = {}) => makeRequest(
+  const testGetRequest = (queryParams = {}) => makeRequest(
     'http://test.url',
-    data,
     queryParams,
     { method: 'GET', headers: { Test: 123 } },
   );
-  const jsonResponse = JSON.stringify({ data: 'data' });
+
+  const testPostRequest = (payload, queryParams = {}) => makeRequest(
+    'http://test.url',
+    queryParams,
+    { method: 'POST', headers: { Test: 123 }, data: payload },
+  );
+
+  const jsonResponse = JSON.stringify({ status: 'ok' });
 
   beforeEach(() => {
     fetch.resetMocks();
@@ -22,20 +28,20 @@ describe('makeRequest helper', () => {
   it('returns promise', () => {
     fetch.mockResponse(jsonResponse, { status: 200 });
 
-    expect(isFunction(testRequest().then)).toBe(true);
+    expect(isFunction(testGetRequest().then)).toBe(true);
   });
 
   it('passes correct data to fetch', () => {
     const resp = fetch.mockResponse(jsonResponse, { status: 200 });
     const testData = { test: 1 };
 
-    testRequest(testData, { test1: 'test1', test2: 'test2' });
+    testPostRequest(testData, { test1: 'test1', test2: 'test2' });
 
     const endpoint = resp.mock.calls[0][0];
     const { method, header, body } = resp.mock.calls[0][1];
 
     expect(endpoint).toEqual('http://test.url?test1=test1&test2=test2');
-    expect(method).toEqual('GET');
+    expect(method).toEqual('POST');
     expect(header).toEqual({
       Accept: 'application/json',
       Test: 123,
@@ -48,7 +54,7 @@ describe('makeRequest helper', () => {
     fetch.mockResponse(jsonResponse, { status: 200 });
     const parsed = JSON.parse(jsonResponse);
 
-    testRequest().then(r =>
+    testGetRequest().then(r =>
       expect(r).toEqual(Immutable.fromJS(parsed)));
   });
 
@@ -59,6 +65,6 @@ describe('makeRequest helper', () => {
 
     const expected = new Error(`${status}: ${JSON.stringify(data)}`);
 
-    testRequest().catch(e => expect(e).toEqual(expected));
+    testGetRequest().catch(e => expect(e).toEqual(expected));
   });
 });

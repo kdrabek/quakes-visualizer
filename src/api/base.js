@@ -30,8 +30,8 @@ function processResponse(resp) {
 }
 
 
-export function makeRequest(url, data, queryParams = {}, options = {}) {
-  const { method = 'GET', headers = {} } = options;
+export function makeRequest(url, queryParams = {}, options = {}) {
+  const { method = 'GET', data, headers = {} } = options;
   const requestHeaders = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
@@ -41,11 +41,12 @@ export function makeRequest(url, data, queryParams = {}, options = {}) {
   const params = `${queryParams ? '?' : ''}${queryString.stringify(queryParams)}`;
   const mergedUrl = `${url}${params}`;
 
-  return processResponse(fetch(mergedUrl, {
-    method,
-    header: requestHeaders,
-    body: JSON.stringify(data),
-  }));
+  let init = { method, header: requestHeaders };
+  if (data) {
+    init = { ...init, body: JSON.stringify(data) };
+  }
+
+  return processResponse(fetch(mergedUrl, init));
 }
 
 export default {
