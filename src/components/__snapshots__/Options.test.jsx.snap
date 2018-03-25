@@ -111,7 +111,7 @@ exports[`Options component should match snapshot 1`] = `
         "setYear": [Function],
       }
     }
-    value={2018-02-20T20:40:58.826Z}
+    value={2018-03-25T16:16:51.674Z}
   />
   <WithStyles(Button)
     color="primary"

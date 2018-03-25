@@ -3,7 +3,7 @@
 exports[`(GET) earthquakes called with proper parameters 1`] = `
 Array [
   Array [
-    "localhost:8080/query?endtime=2018-02-20&format=geojson&minmagnitude=5&starttime=2018-02-20",
+    "localhost:8080/query?endtime=2018-02-21&format=geojson&minmagnitude=5&starttime=2018-02-20",
     Object {
       "header": Object {
         "Accept": "application/json",

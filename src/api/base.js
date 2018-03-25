@@ -1,3 +1,4 @@
+import 'whatwg-fetch';
 import queryString from 'query-string';
 import Immutable from 'immutable';
 

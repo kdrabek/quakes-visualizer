@@ -29,7 +29,6 @@ module.exports = {
         }
       ]
     }],
-
   ],
   options: {
     tests: '/src'

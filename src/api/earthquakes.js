@@ -2,13 +2,13 @@ import { earthquakeApiUrl } from '../configs';
 import { makeRequest } from './base';
 
 
-const get = (date, minmagnitude) =>
+const get = (startDate, endDate, minmagnitude) =>
   makeRequest(
     `${earthquakeApiUrl}/query`,
     {
       format: 'geojson',
-      starttime: date,
-      endtime: date,
+      starttime: startDate,
+      endtime: endDate,
       minmagnitude,
     },
   );

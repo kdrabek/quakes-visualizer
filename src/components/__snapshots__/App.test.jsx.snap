@@ -9,7 +9,7 @@ exports[`App component should match snapshot 1`] = `
   <div
     className="list"
   >
-    earthquake
+    <WithStyles(DetailedExpansionPanel) />
   </div>
   <div
     className="map"
