@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title component should match snapshot 1`] = `
+<WithStyles(Typography)
+  className="header"
+  color="inherit"
+  variant="title"
+>
+  Earthquake Visualizer
+</WithStyles(Typography)>
+`;

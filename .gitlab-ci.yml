@@ -1,0 +1,9 @@
+stages:
+  - test
+
+tests:
+  stage: test
+  script:
+    - docker-compose run --rm tests
+  after_script:
+    - docker-compose down

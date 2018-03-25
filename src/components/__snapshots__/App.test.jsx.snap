@@ -2,17 +2,19 @@
 
 exports[`App component should match snapshot 1`] = `
 <div
-  className="App"
+  className="wrapper"
 >
-  <h1>
-    Welcome to 
-    earthquake
-  </h1>
-  <WithStyles(Button)
-    color="primary"
-    variant="raised"
+  <Title />
+  <Options />
+  <div
+    className="list"
   >
-    Hello World
-  </WithStyles(Button)>
+    Placeholder for earthquakes list.
+  </div>
+  <div
+    className="map"
+  >
+    2
+  </div>
 </div>
 `;

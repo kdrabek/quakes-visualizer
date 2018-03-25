@@ -19,4 +19,4 @@ services:
       dockerfile: ./Dockerfile
     volumes:
       - .:/app
-    command: bash -c "yarn install && yarn lint && yarn test"
+    command: bash -c "yarn install && yarn test"

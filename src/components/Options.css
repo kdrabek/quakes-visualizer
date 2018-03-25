@@ -1,0 +1,11 @@
+.options {
+    background: #e8bd00;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

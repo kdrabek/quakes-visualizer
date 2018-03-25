@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handlers getting new data has data in right place when action FULFILLED 1`] = `
+Immutable.Map {
+  "earthquakes": Immutable.Map {
+    "data": Immutable.Map {
+      "status": 200,
+      "data": Immutable.Map {
+        "type": "FeatureCollection",
+        "metadata": Immutable.Map {
+          "generated": 1521989257000,
+          "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-01-02&minmagnitude=5",
+          "title": "USGS Earthquakes",
+          "status": 200,
+          "api": "1.5.8",
+          "count": 2,
+        },
+        "features": Immutable.List [
+          Immutable.Map {
+            "type": "Feature",
+            "properties": Immutable.Map {
+              "tsunami": 1,
+              "tz": 660,
+              "place": "32km W of Sola, Vanuatu",
+              "felt": null,
+              "cdi": null,
+              "mmi": 4.84,
+              "code": "c000lvb5",
+              "time": 1388592209000,
+              "magType": "mww",
+              "dmin": 3.997,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usc000lvb5",
+              "nst": null,
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usc000lvb5&format=geojson",
+              "sig": 650,
+              "status": "reviewed",
+              "mag": 6.5,
+              "gap": 14,
+              "rms": 0.76,
+              "title": "M 6.5 - 32km W of Sola, Vanuatu",
+              "ids": ",at00myqcls,pt14001000,usc000lvb5,",
+              "sources": ",at,pt,us,",
+              "types": ",cap,geoserve,impact-link,losspager,moment-tensor,moment-tensor,moment-tensor,moment-tensor,nearby-cities,origin,phase-data,shakemap,tectonic-summary,",
+              "type": "earthquake",
+              "updated": 1394151955000,
+              "alert": "green",
+              "net": "us",
+            },
+            "geometry": Immutable.Map {
+              "type": "Point",
+              "coordinates": Immutable.List [
+                167.249,
+                -13.8633,
+                187,
+              ],
+            },
+            "id": "usc000lvb5",
+          },
+        ],
+        "bbox": Immutable.List [
+          120.2389,
+          -13.8633,
+          10.07,
+          167.249,
+          19.0868,
+          187,
+        ],
+      },
+    },
+    "pending": false,
+    "error": false,
+  },
+}
+`;
+
+exports[`handlers getting new data has data in right place when action PENDING 1`] = `
+Immutable.Map {
+  "earthquakes": Immutable.Map {
+    "data": Immutable.List [],
+    "pending": true,
+    "error": false,
+  },
+}
+`;
+
+exports[`handlers getting new data has data in right place when action REJECTED 1`] = `
+Immutable.Map {
+  "earthquakes": Immutable.Map {
+    "data": Immutable.List [],
+    "pending": false,
+    "error": Immutable.Map {
+      "error": "Something went wrong",
+    },
+  },
+}
+`;
+
+exports[`handlers getting new data has right data in the payload 1`] = `
+Immutable.Map {
+  "status": 200,
+  "data": Immutable.Map {
+    "type": "FeatureCollection",
+    "metadata": Immutable.Map {
+      "generated": 1521989257000,
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-01-02&minmagnitude=5",
+      "title": "USGS Earthquakes",
+      "status": 200,
+      "api": "1.5.8",
+      "count": 2,
+    },
+    "features": Immutable.List [
+      Immutable.Map {
+        "type": "Feature",
+        "properties": Immutable.Map {
+          "tsunami": 1,
+          "tz": 660,
+          "place": "32km W of Sola, Vanuatu",
+          "felt": null,
+          "cdi": null,
+          "mmi": 4.84,
+          "code": "c000lvb5",
+          "time": 1388592209000,
+          "magType": "mww",
+          "dmin": 3.997,
+          "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usc000lvb5",
+          "nst": null,
+          "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usc000lvb5&format=geojson",
+          "sig": 650,
+          "status": "reviewed",
+          "mag": 6.5,
+          "gap": 14,
+          "rms": 0.76,
+          "title": "M 6.5 - 32km W of Sola, Vanuatu",
+          "ids": ",at00myqcls,pt14001000,usc000lvb5,",
+          "sources": ",at,pt,us,",
+          "types": ",cap,geoserve,impact-link,losspager,moment-tensor,moment-tensor,moment-tensor,moment-tensor,nearby-cities,origin,phase-data,shakemap,tectonic-summary,",
+          "type": "earthquake",
+          "updated": 1394151955000,
+          "alert": "green",
+          "net": "us",
+        },
+        "geometry": Immutable.Map {
+          "type": "Point",
+          "coordinates": Immutable.List [
+            167.249,
+            -13.8633,
+            187,
+          ],
+        },
+        "id": "usc000lvb5",
+      },
+    ],
+    "bbox": Immutable.List [
+      120.2389,
+      -13.8633,
+      10.07,
+      167.249,
+      19.0868,
+      187,
+    ],
+  },
+}
+`;
+
+exports[`handlers has proper default state 1`] = `
+Object {
+  "earthquakes": Object {
+    "data": Array [],
+    "error": false,
+    "pending": false,
+  },
+}
+`;
