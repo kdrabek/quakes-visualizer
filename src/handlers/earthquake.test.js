@@ -15,6 +15,22 @@ async function fulfilledAction(action) {
   };
 }
 
+async function pendingAction(action) {
+  return {
+    ...action,
+    payload: {},
+    type: `${action.type}_PENDING`,
+  };
+}
+
+async function rejectedAction(action) {
+  return {
+    ...action,
+    payload: { error: 'Something went wrong' },
+    type: `${action.type}_REJECTED`,
+  };
+}
+
 describe('handlers', () => {
   const reducer = combineReducers({ earthquakes: earthquake.reducer });
   const state = reducer(undefined, Immutable.Map());
@@ -24,21 +40,32 @@ describe('handlers', () => {
   });
 
   describe('getting new data', () => {
-    const ret = earthquake.actions.getEarthquakes('2018-03-20', '2018-03-21', 5);
+    const resp = earthquake.actions.getEarthquakes('2018-03-20', '2018-03-21', 5);
 
     it('api.getEarthquakes called once', async () => {
       expect(api.get.mock.calls.length).toBe(1);
     });
 
     it('has right data in the payload', async () => {
-      expect(await ret.payload).toMatchSnapshot();
+      expect(await resp.payload).toMatchSnapshot();
     });
 
-    it('has data in right place in the reducer', async () => {
-      expect(reducer(
-        state,
-        await fulfilledAction(ret),
-      )).toMatchSnapshot();
+    it('has data in right place when action FULFILLED', async () => {
+      const newState = reducer(state, await fulfilledAction(resp));
+
+      expect(newState).toMatchSnapshot();
+    });
+
+    it('has data in right place when action PENDING', async () => {
+      const newState = reducer(state, await pendingAction(resp));
+
+      expect(newState).toMatchSnapshot();
+    });
+
+    it('has data in right place when action REJECTED', async () => {
+      const newState = reducer(state, await rejectedAction(resp));
+
+      expect(newState).toMatchSnapshot();
     });
   });
 });

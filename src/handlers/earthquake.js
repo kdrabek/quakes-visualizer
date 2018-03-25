@@ -17,17 +17,17 @@ const initialState = Immutable.fromJS({
 });
 
 const reducer = handleActions({
-  GET_EATRHQUAKES_PENDING: state => state
+  GET_EARTHQUAKES_PENDING: state => state
     .update('pending', () => true),
 
-  GET_EARTHQUAKES_FULFILLED: (state, action) => {
-    return state.update('pending', () => false)
-      .set('data', Immutable.fromJS(action.payload));
-  },
+  GET_EARTHQUAKES_FULFILLED: (state, action) => state
+    .update('pending', () => false)
+    .set('data', Immutable.fromJS(action.payload)),
 
   GET_EARTHQUAKES_REJECTED: (state, action) => state
     .update('pending', () => false)
     .set('error', Immutable.fromJS(action.payload)),
+
 }, initialState);
 
 

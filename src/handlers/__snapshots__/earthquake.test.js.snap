@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`handlers getting new data has data in right place in the reducer 1`] = `
+exports[`handlers getting new data has data in right place when action FULFILLED 1`] = `
 Immutable.Map {
   "earthquakes": Immutable.Map {
     "data": Immutable.Map {
@@ -69,6 +69,28 @@ Immutable.Map {
     },
     "pending": false,
     "error": false,
+  },
+}
+`;
+
+exports[`handlers getting new data has data in right place when action PENDING 1`] = `
+Immutable.Map {
+  "earthquakes": Immutable.Map {
+    "data": Immutable.List [],
+    "pending": true,
+    "error": false,
+  },
+}
+`;
+
+exports[`handlers getting new data has data in right place when action REJECTED 1`] = `
+Immutable.Map {
+  "earthquakes": Immutable.Map {
+    "data": Immutable.List [],
+    "pending": false,
+    "error": Immutable.Map {
+      "error": "Something went wrong",
+    },
   },
 }
 `;
