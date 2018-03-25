@@ -86,7 +86,37 @@ exports[`Options component should match snapshot 1`] = `
     autoOk={false}
     disableFuture={true}
     format="YYYY-MM-DD"
-    label="Choose a date"
+    label="Choose start date"
+    minDate="1900-01-01"
+    returnMoment={true}
+    utils={
+      Object {
+        "formatNumber": [Function],
+        "getCalendarHeaderText": [Function],
+        "getDatePickerHeaderText": [Function],
+        "getDateTimePickerHeaderText": [Function],
+        "getDayText": [Function],
+        "getHourText": [Function],
+        "getMeridiemText": [Function],
+        "getMinuteText": [Function],
+        "getMonthNumber": [Function],
+        "getNextMonth": [Function],
+        "getPreviousMonth": [Function],
+        "getStartOfMonth": [Function],
+        "getWeekArray": [Function],
+        "getWeekdays": [Function],
+        "getYear": [Function],
+        "getYearText": [Function],
+        "setYear": [Function],
+      }
+    }
+    value={mockConstructor {}}
+  />
+  <DatePickerWrapper
+    autoOk={false}
+    disableFuture={true}
+    format="YYYY-MM-DD"
+    label="Choose end date"
     minDate="1900-01-01"
     onChange={[Function]}
     returnMoment={true}
@@ -111,7 +141,7 @@ exports[`Options component should match snapshot 1`] = `
         "setYear": [Function],
       }
     }
-    value={2018-03-25T18:28:41.269Z}
+    value={mockConstructor {}}
   />
   <WithStyles(Button)
     color="primary"

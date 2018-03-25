@@ -9,7 +9,7 @@ exports[`App component should match snapshot 1`] = `
   <div
     className="list"
   >
-    <WithStyles(DetailedExpansionPanel) />
+    Placeholder for earthquakes list.
   </div>
   <div
     className="map"

@@ -3,8 +3,6 @@ import './App.css';
 
 import Title from './Title';
 import Options from './Options';
-import EarthquakesList from './EarthquakesList';
-
 
 export default class App extends PureComponent {
   state = {
@@ -17,7 +15,7 @@ export default class App extends PureComponent {
         <Options />
 
         <div className="list">
-          <EarthquakesList />
+          Placeholder for earthquakes list.
         </div>
         <div className="map">2</div>
       </div>
