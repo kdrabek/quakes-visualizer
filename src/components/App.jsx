@@ -8,7 +8,6 @@ import EarthquakesList from './EarthquakesList';
 
 export default class App extends PureComponent {
   state = {
-    name: 'earthquake',
   };
 
   render() {
@@ -18,7 +17,7 @@ export default class App extends PureComponent {
         <Options />
 
         <div className="list">
-          <EarthquakesList />>
+          <EarthquakesList />
         </div>
         <div className="map">2</div>
       </div>
