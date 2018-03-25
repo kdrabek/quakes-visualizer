@@ -5,7 +5,8 @@ import api from '../api';
 
 const getEarthquakes = createAction(
   'GET_EARTHQUAKES',
-  (startDate, endDate, minmagnitude) => api.getEarthquake(startDate, endDate, minmagnitude),
+  (startDate, endDate, minmagnitude) =>
+    api.getEarthquake(startDate, endDate, minmagnitude),
 );
 
 const actions = { getEarthquakes };
