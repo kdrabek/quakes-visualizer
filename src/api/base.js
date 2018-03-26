@@ -14,7 +14,7 @@ function parse(resp) {
 
 
 function toImmutable(resp) {
-  return Immutable.fromJS(resp.data);
+  return Immutable.fromJS(resp.data.features);
 }
 
 

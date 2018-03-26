@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import React from 'react';
 import { render } from 'react-dom';
 import { combineReducers } from 'redux-immutable';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import App from './components/App';
@@ -18,7 +18,16 @@ const reducers = combineReducers({
   earthquakes: handler.reducer,
 });
 
-const middlewares = applyMiddleware(thunk, promiseMiddleware());
+let middlewares = applyMiddleware(thunk, promiseMiddleware());
+
+// Redux extension
+if (window.devToolsExtension) {
+  middlewares = compose(
+    middlewares,
+    window.devToolsExtension && window.devToolsExtension(),
+  );
+}
+
 const store = createStore(reducers, initialState, middlewares);
 
 const root = document.getElementById('root');
