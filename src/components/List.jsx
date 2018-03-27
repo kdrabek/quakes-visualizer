@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import ExpansionPanel, {
   ExpansionPanelDetails,
@@ -8,15 +9,33 @@ import Typography from 'material-ui/Typography';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 
 
+const formatFromTimestamp = timestamp => moment(timestamp).format('DD-MM-YYYY HH:mm');
+
 class ControlledExpansionPanels extends React.Component {
+  state = {
+    expanded: null,
+  }
+
+  handleChange = panel => (event, expanded) => {
+    this.setState({
+      expanded: expanded ? panel : false,
+    });
+  };
+
   prepareRow(e) {
-    console.log(this.props);
+    console.log(e);
+    const id = e.get('id');
+    const properties = e.get('properties');
+    const { expanded } = this.state;
     return (
       <div>
-        <ExpansionPanel expanded={false}>
+        <ExpansionPanel expanded={expanded === id} onChange={this.handleChange(id)}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography>{e.get('id')}</Typography>
-            <Typography>I am an expansion panel</Typography>
+            <Typography>{formatFromTimestamp(properties.get('time'))}</Typography>
+            &nbsp;
+            <Typography>{properties.get('place')}</Typography>
+            &nbsp;
+            <Typography>{properties.get('mag')}</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>

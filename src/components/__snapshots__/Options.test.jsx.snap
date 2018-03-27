@@ -8,7 +8,7 @@ exports[`Options component should match snapshot 1`] = `
     <WithStyles(InputLabel)
       htmlFor="magnitude"
     >
-      Magnitude
+      Min Magnitude
     </WithStyles(InputLabel)>
     <WithStyles(Select)
       inputProps={
@@ -86,37 +86,7 @@ exports[`Options component should match snapshot 1`] = `
     autoOk={false}
     disableFuture={true}
     format="YYYY-MM-DD"
-    label="Choose start date"
-    minDate="1900-01-01"
-    returnMoment={true}
-    utils={
-      Object {
-        "formatNumber": [Function],
-        "getCalendarHeaderText": [Function],
-        "getDatePickerHeaderText": [Function],
-        "getDateTimePickerHeaderText": [Function],
-        "getDayText": [Function],
-        "getHourText": [Function],
-        "getMeridiemText": [Function],
-        "getMinuteText": [Function],
-        "getMonthNumber": [Function],
-        "getNextMonth": [Function],
-        "getPreviousMonth": [Function],
-        "getStartOfMonth": [Function],
-        "getWeekArray": [Function],
-        "getWeekdays": [Function],
-        "getYear": [Function],
-        "getYearText": [Function],
-        "setYear": [Function],
-      }
-    }
-    value={mockConstructor {}}
-  />
-  <DatePickerWrapper
-    autoOk={false}
-    disableFuture={true}
-    format="YYYY-MM-DD"
-    label="Choose end date"
+    label="Choose a date"
     minDate="1900-01-01"
     onChange={[Function]}
     returnMoment={true}
@@ -143,11 +113,5 @@ exports[`Options component should match snapshot 1`] = `
     }
     value={mockConstructor {}}
   />
-  <WithStyles(Button)
-    color="primary"
-    onClick={[Function]}
-  >
-    Submit
-  </WithStyles(Button)>
 </form>
 `;

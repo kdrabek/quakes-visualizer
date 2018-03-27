@@ -2,12 +2,13 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 // import Immutable from 'immutable';
 import ImmutablePropTypes from 'react-immutable-proptypes';
-
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { CircularProgress } from 'material-ui/Progress';
 import handler from '../handlers/earthquake';
 import List from '../components/List';
+import Options from '../components/Options';
+
 
 const propTypes = PropTypes && {
   actions: PropTypes.object.isRequired,
@@ -16,14 +17,28 @@ const propTypes = PropTypes && {
 
 export class Earthquakes extends PureComponent {
   componentWillMount() {
-    this.props.actions.getEarthquakes('2018-03-21', '2018-03-22', 5);
+    this.props.actions.getEarthquakes(new Date(), 5);
+  }
+
+  handleOnClick = (date, magnitude) => {
+    this.props.actions.getEarthquakes(date, magnitude);
   }
 
   render() {
     if (this.props.earthquakes.pending) {
-      return <CircularProgress />;
+      return (
+        <div>
+          <Options />
+          <CircularProgress />
+        </div>
+      );
     }
-    return <List earthquakesList={this.props.earthquakes} />;
+    return (
+      <div>
+        <Options handleOnClick={this.handleOnClick} />
+        <List earthquakesList={this.props.earthquakes} />
+      </div>
+    );
   }
 }
 

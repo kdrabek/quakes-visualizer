@@ -5,18 +5,17 @@ body {
 .wrapper {
   display: grid;
   height: 100vh;
-  grid-template-rows: 1fr 1fr 10fr;
+  grid-template-rows: 1fr 9fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .map {
-  background-color: #DD2020;
   grid-column: 2 / 3;
-  grid-row: 2 / 4;
+  grid-row: 2 / 3;
 }
 
 .list {
-  background-color: #7b6500;
   grid-column: 1 / 2;
-  grid-row: 3 / 4;
+  grid-row: 2 / 3;
   overflow: auto;
 }
