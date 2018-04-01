@@ -1,15 +1,19 @@
 import PropTypes from 'prop-types';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
-
+import './Map.css';
 
 const Map = withScriptjs(withGoogleMap((props) => {  //eslint-disable-line
+  const { coords } = props;
   return (
-    <GoogleMap
-      defaultZoom={5}
-      defaultCenter={{ lat: -34.397, lng: 150.644 }}
-    >
-      {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
-    </GoogleMap>
+    <div className="wrapper">
+      <GoogleMap 
+        className="map" 
+        defaultCenter={coords}
+        center={coords}
+        {...props} >
+        {props.isMarkerShown && <Marker position={coords} />}
+      </GoogleMap>
+    </div>
   );
 }));
 

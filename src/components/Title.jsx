@@ -4,9 +4,14 @@ import './Title.css';
 
 
 const Title = props => (
-  <Typography className="header" variant="title" color="inherit" {...props} >
-    Earthquake Visualizer
-  </Typography>
+  <div className="header">
+    <div className="flex-container">
+      <Typography variant="title" className="title" {...props} >
+        earthquakes browser
+      </Typography>
+      <i className="fa fa-gitlab" />
+    </div>
+  </div>
 );
 
 export default Title;

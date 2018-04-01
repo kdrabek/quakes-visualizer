@@ -36,7 +36,7 @@ export class Earthquakes extends PureComponent {
     return (
       <div>
         <Options handleOnClick={this.handleOnClick} />
-        <List earthquakesList={this.props.earthquakes} />
+        <List earthquakesList={this.props.earthquakes} updateMap={this.props.actions.updateMap} />
       </div>
     );
   }
@@ -48,6 +48,7 @@ Earthquakes.displayName = 'Earthquakes';
 export function mapStateToProps(state, props) {
   return {
     earthquakes: state.getIn(['earthquakes', 'data']),
+    selected: state.get('selected'),
     ...props,
   };
 }

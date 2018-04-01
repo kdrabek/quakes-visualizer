@@ -3,7 +3,8 @@ import './App.css';
 
 import Title from './Title';
 import EarthquakesContainer from '../containers/Earthquakes';
-import Map from './Map';
+import EarthquakesMapContainer from '../containers/EarthquakesMap';
+
 
 export default class App extends PureComponent {
   state = {
@@ -11,20 +12,12 @@ export default class App extends PureComponent {
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="grid">
         <Title />
-        <div className="list">
-          <EarthquakesContainer />
-        </div>
-        <div className="map">
-          <Map
-            isMarkerShown
-            googleMapURL='https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places'
-            loadingElement={<div style={{ height: '100%' }} />}
-            containerElement={<div style={{ height: '100%' }} />}
-            mapElement={<div style={{ height: '100%' }} />}
-          />
-        </div>
+        <EarthquakesContainer />
+        <EarthquakesMapContainer
+          isMarkerShown
+        />
       </div>
     );
   }

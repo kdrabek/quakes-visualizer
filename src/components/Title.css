@@ -1,6 +1,17 @@
 .header {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
-    padding: 5px;
+    background: red;
   }
   
+.flex-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0px 30px;
+}
+
+.flex-container > i {
+  margin-left: auto;
+}

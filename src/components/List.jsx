@@ -8,6 +8,7 @@ import ExpansionPanel, {
 import Typography from 'material-ui/Typography';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 
+import './List.css';
 
 const formatFromTimestamp = timestamp => moment(timestamp).format('DD-MM-YYYY HH:mm');
 
@@ -20,10 +21,10 @@ class ControlledExpansionPanels extends React.Component {
     this.setState({
       expanded: expanded ? panel : false,
     });
+    this.props.updateMap(panel);  //eslint-disable-line
   };
 
   prepareRow(e) {
-    console.log(e);
     const id = e.get('id');
     const properties = e.get('properties');
     const { expanded } = this.state;
@@ -51,7 +52,11 @@ class ControlledExpansionPanels extends React.Component {
   render() {
     const { earthquakesList } = this.props;  //eslint-disable-line
 
-    return <div>{ earthquakesList.map(e => this.prepareRow(e)) }</div>;
+    return (
+      <div className="list">
+        { earthquakesList.map(e => this.prepareRow(e)) }
+      </div>
+    );
   }
 }
 
