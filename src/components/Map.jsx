@@ -4,8 +4,8 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-map
 import './Map.css';
 
 const Map = withScriptjs(withGoogleMap((props) => {  //eslint-disable-line
-  const { selected } = props;
-  const center = selected || Immutable.fromJS({ lat: 51.28, lng: 0.00 });
+  const { mapCoords } = props;
+  const center = mapCoords || Immutable.fromJS({ lat: 51.28, lng: 0.00 });
 
   return (
     <div className="wrapper">
@@ -14,7 +14,7 @@ const Map = withScriptjs(withGoogleMap((props) => {  //eslint-disable-line
         center={center.toJS()}
         {...props}
       >
-        {selected && <Marker position={center.toJS()} />}
+        {mapCoords && <Marker position={center.toJS()} />}
       </GoogleMap>
     </div>
   );

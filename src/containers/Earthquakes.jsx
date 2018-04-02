@@ -48,7 +48,7 @@ Earthquakes.displayName = 'Earthquakes';
 export function mapStateToProps(state, props) {
   return {
     earthquakes: state.getIn(['earthquakes', 'data']),
-    selected: state.get('selected'),
+    mapCoords: state.get('mapCoords'),
     ...props,
   };
 }

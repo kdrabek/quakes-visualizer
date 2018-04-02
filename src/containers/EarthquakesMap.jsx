@@ -7,7 +7,7 @@ import MyMap from '../components/Map';
 
 
 const propTypes = PropTypes && {
-  selected: ImmutablePropTypes.object,
+  mapCoords: ImmutablePropTypes.object,
 };
 
 export class EarthquakesMap extends PureComponent {
@@ -30,7 +30,7 @@ EarthquakesMap.displayName = 'EarthquakesMap';
 
 export function mapStateToProps(state, props) {
   return {
-    selected: state.get('earthquakes').get('selected'),
+    mapCoords: state.get('earthquakes').get('mapCoords'),
     ...props,
   };
 }
