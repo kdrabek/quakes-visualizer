@@ -25,18 +25,20 @@ export class Earthquakes extends PureComponent {
   }
 
   render() {
-    if (this.props.earthquakes.pending) {
-      return (
-        <div>
-          <Options />
-          <CircularProgress />
-        </div>
-      );
-    }
+    const { pending } = this.props.earthquakes;
     return (
       <div>
-        <Options handleOnClick={this.handleOnClick} />
-        <List earthquakesList={this.props.earthquakes} updateMap={this.props.actions.updateMap} />
+        <Options
+          handleOnClick={this.props.actions.getEarthquakes}
+        />
+        {
+          pending ?
+            <CircularProgress /> :
+            <List
+              earthquakesList={this.props.earthquakes}
+              updateMap={this.props.actions.updateMap}
+            />
+        }
       </div>
     );
   }

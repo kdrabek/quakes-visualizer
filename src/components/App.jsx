@@ -13,7 +13,10 @@ export default class App extends PureComponent {
   render() {
     return (
       <div className="grid">
-        <Title />
+        <Title
+          text="earthquake browser"
+          url="https://gitlab.com/kdrabek/earthquakes-visualizer"
+        />
         <EarthquakesContainer />
         <EarthquakesMapContainer
           isMarkerShown

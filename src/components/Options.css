@@ -1,4 +1,5 @@
 .container {
+  background: #f3f6f8;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
