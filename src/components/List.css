@@ -1,7 +1,8 @@
 .list {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    overflow: auto;
+    grid-column: 1;
+    grid-row: 2 / 4;
+    max-height: auto;
+    overflow-x: auto;
     background: purple;
   }
   

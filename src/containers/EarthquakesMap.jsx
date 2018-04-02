@@ -12,22 +12,13 @@ const propTypes = PropTypes && {
 
 export class EarthquakesMap extends PureComponent {
   render() {
-    let coords;
-    const { selected } = this.props;
-    if (selected) {
-      const coordinates = selected.get('coordinates');
-      coords = { lat: coordinates.get(1), lng: coordinates.get(0) };
-    } else {
-      coords = { lat: 0, lng: 0 };
-    }
     return (
       <MyMap
         {...this.props}
-        coords={coords}
         defaultZoom={5}
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
         loadingElement={<div style={{ height: '100%' }} />}
-        containerElement={<div style={{ height: '400px' }} />}
+        containerElement={<div style={{ height: '100%' }} />}
         mapElement={<div style={{ height: '100%' }} />}
       />
     );

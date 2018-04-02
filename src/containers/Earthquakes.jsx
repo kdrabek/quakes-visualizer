@@ -16,7 +16,7 @@ const propTypes = PropTypes && {
 };
 
 export class Earthquakes extends PureComponent {
-  componentWillMount() {
+  componentDidMount() {
     this.props.actions.getEarthquakes(new Date(), 5);
   }
 
