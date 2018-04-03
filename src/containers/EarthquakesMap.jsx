@@ -17,7 +17,7 @@ export class EarthquakesMap extends PureComponent {
         {...this.props}
         defaultZoom={5}
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-        loadingElement={<div style={{ height: '100%' }} />}
+        loadingElement={<div/>}
         containerElement={<div style={{ height: '100%' }} />}
         mapElement={<div style={{ height: '100%' }} />}
       />

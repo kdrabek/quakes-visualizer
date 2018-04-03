@@ -27,7 +27,7 @@ export class Earthquakes extends PureComponent {
   render() {
     const { pending } = this.props.earthquakes;
     return (
-      <div>
+      <span>
         <Options
           handleOnClick={this.props.actions.getEarthquakes}
         />
@@ -39,7 +39,7 @@ export class Earthquakes extends PureComponent {
               updateMap={this.props.actions.updateMap}
             />
         }
-      </div>
+      </span>
     );
   }
 }

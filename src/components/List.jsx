@@ -1,8 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import ListItem from './Item';
 
-import './List.css';
+import styles from './List.css';
+
+const cx = classNames.bind(styles);
+const className = cx({
+  list: true,
+});
+
 
 class ControlledExpansionPanels extends React.Component {
   constructor(props) {
@@ -20,7 +27,7 @@ class ControlledExpansionPanels extends React.Component {
     const { earthquakesList } = this.props;  //eslint-disable-line
 
     return (
-      <div className="list">
+      <div className={className}>
         {
           earthquakesList.isEmpty() ?
           'No Events Found' :
