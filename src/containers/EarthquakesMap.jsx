@@ -10,18 +10,9 @@ const propTypes = PropTypes && {
   mapCoords: ImmutablePropTypes.object,
 };
 
-export class EarthquakesMap extends PureComponent {
+export class EarthquakesMap extends PureComponent {  //eslint-disable-line
   render() {
-    return (
-      <MyMap
-        {...this.props}
-        defaultZoom={5}
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-        loadingElement={<div/>}
-        containerElement={<div style={{ height: '100%' }} />}
-        mapElement={<div style={{ height: '100%' }} />}
-      />
-    );
+    return <MyMap mapCoords={this.props.mapCoords} />;
   }
 }
 

@@ -1,3 +1,7 @@
+.options {
+  grid-area: options;
+}
+
 .container {
   background: #f3f6f8;
   display: flex;

@@ -20,18 +20,32 @@ const defaultProps = {};
 
 
 const Map = withScriptjs(withGoogleMap((props) => {  //eslint-disable-line
-  const { mapCoords } = props;
-  const center = mapCoords || Immutable.fromJS({ lat: 51.28, lng: 0.00 });
-  const centerJS = center.toJS();
-
+  const { center } = props;
   return (
-    <GoogleMap className={wrapper} center={centerJS} {...props}>
-      { mapCoords && <Marker position={center} /> }
+    <GoogleMap {...props}>
+      { center && <Marker position={center} /> }
     </GoogleMap>
   );
 }));
 
-Map.displayName = 'Map';
-Map.propTypes = propTypes;
-Map.defaultProps = defaultProps;
-export default Map;
+const EnhancedMap = (props) => {
+  const { mapCoords } = props;
+  const center = mapCoords || Immutable.fromJS({ lat: 51.28, lng: 0.00 });
+  const centerJS = center.toJS();
+  return (
+    <Map
+      isMarkerShown
+      center={centerJS}
+      loadingElement={<div className={wrapper} />}
+      containerElement={<div className={wrapper} />}
+      mapElement={<div className={wrapper} />}
+      defaultZoom={5}
+      googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+    />
+  );
+};
+
+EnhancedMap.displayName = 'Map';
+EnhancedMap.propTypes = propTypes;
+EnhancedMap.defaultProps = defaultProps;
+export default EnhancedMap;

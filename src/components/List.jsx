@@ -7,7 +7,7 @@ import styles from './List.css';
 
 const cx = classNames.bind(styles);
 const className = cx({
-  list: true,
+  main: true,
 });
 
 

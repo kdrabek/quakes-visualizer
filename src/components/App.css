@@ -6,7 +6,10 @@ body {
 .grid {
   display: grid;
   height: 100vh;
-  grid-template-rows: 1fr 9fr;
-  grid-template-columns: 45% 55%;
+  grid-template-areas: "head     head"
+                       "options  map"
+                       "main     map";
+  grid-template-rows: 1fr 1fr 8fr;
+  grid-template-columns: 1fr 1fr;
 }
 

@@ -7,7 +7,6 @@ import { bindActionCreators } from 'redux';
 import { CircularProgress } from 'material-ui/Progress';
 import handler from '../handlers/earthquake';
 import List from '../components/List';
-import Options from '../components/Options';
 
 
 const propTypes = PropTypes && {
@@ -20,27 +19,15 @@ export class Earthquakes extends PureComponent {
     this.props.actions.getEarthquakes(new Date(), 5);
   }
 
-  handleOnClick = (date, magnitude) => {
-    this.props.actions.getEarthquakes(date, magnitude);
-  }
-
   render() {
     const { pending } = this.props.earthquakes;
-    return (
-      <span>
-        <Options
-          handleOnClick={this.props.actions.getEarthquakes}
-        />
-        {
-          pending ?
-            <CircularProgress /> :
-            <List
-              earthquakesList={this.props.earthquakes}
-              updateMap={this.props.actions.updateMap}
-            />
-        }
-      </span>
-    );
+    const comp = pending ?
+      <CircularProgress /> :
+      (<List
+        earthquakesList={this.props.earthquakes}
+        updateMap={this.props.actions.updateMap}
+      />);
+    return comp;
   }
 }
 

@@ -30,30 +30,28 @@ const Item = (props) => {
     id, properties, expanded, handleChange,
   } = props;
   return (
-    <div>
-      <ExpansionPanel expanded={expanded} onChange={handleChange(id)}>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography>{formatFromTimestamp(properties.get('time'))}</Typography>
-          &nbsp;
-          <Typography>{properties.get('place')}</Typography>
-          &nbsp;
-          <Typography>{properties.get('mag')}</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            <ul>
-              <li>Alert: {properties.get('alert')}</li>
-              <li>Intensity: {properties.get('cdi')}</li>
-              <li>Depth: {properties.get('depth')}</li>
-              <li>Felt Reports Number: {properties.get('felt')}</li>
-              <li>Tsunami: {properties.get('tsunami')}</li>
-              <li>Type: {properties.get('type')}</li>
-              <li>Report: {properties.get('url')}</li>
-            </ul>
-          </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-    </div>
+    <ExpansionPanel expanded={expanded} onChange={handleChange(id)}>
+      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+        <Typography>{formatFromTimestamp(properties.get('time'))}</Typography>
+        &nbsp;
+        <Typography>{properties.get('place')}</Typography>
+        &nbsp;
+        <Typography>{properties.get('mag')}</Typography>
+      </ExpansionPanelSummary>
+      <ExpansionPanelDetails>
+        <Typography>
+          <ul>
+            <li>Alert: {properties.get('alert')}</li>
+            <li>Intensity: {properties.get('cdi')}</li>
+            <li>Depth: {properties.get('depth')}</li>
+            <li>Felt Reports Number: {properties.get('felt')}</li>
+            <li>Tsunami: {properties.get('tsunami')}</li>
+            <li>Type: {properties.get('type')}</li>
+            <li>Report: {properties.get('url')}</li>
+          </ul>
+        </Typography>
+      </ExpansionPanelDetails>
+    </ExpansionPanel>
   );
 };
 

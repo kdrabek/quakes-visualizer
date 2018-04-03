@@ -4,6 +4,7 @@ import './App.css';
 import Title from './Title';
 import EarthquakesContainer from '../containers/Earthquakes';
 import EarthquakesMapContainer from '../containers/EarthquakesMap';
+import OptionsCont from '../containers/Options';
 
 
 export default class App extends PureComponent {
@@ -17,10 +18,9 @@ export default class App extends PureComponent {
           text="earthquake browser"
           url="https://gitlab.com/kdrabek/earthquakes-visualizer"
         />
+        <OptionsCont />
         <EarthquakesContainer />
-        <EarthquakesMapContainer
-          isMarkerShown
-        />
+        <EarthquakesMapContainer />
       </div>
     );
   }

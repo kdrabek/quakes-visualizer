@@ -1,8 +1,6 @@
-.list {
-    grid-column: 1;
-    grid-row: 2 / 4;
-    max-height: auto;
-    overflow-x: auto;
-    background: #f3f6f8;
-  }
+.main {
+  grid-area: main;
+  overflow-y: scroll;
+  background: #f3f6f8;
+}
   

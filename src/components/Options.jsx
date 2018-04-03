@@ -29,6 +29,7 @@ class Options extends PureComponent {
       <div className="options">
         <div className="container">
           <div className="date">
+            Pick a date:
             <DatePicker
               disableFuture
               locale="en-gb"
@@ -44,6 +45,7 @@ class Options extends PureComponent {
             />
           </div>
           <div className="mag">
+            Select min magnitude:
             <Slider
               min={1}
               max={10}
