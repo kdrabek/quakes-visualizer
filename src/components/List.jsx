@@ -12,17 +12,6 @@ const className = cx({
 
 
 class ControlledExpansionPanels extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { expanded: null };
-    this.handleChange.bind(this);
-  }
-
-  handleChange = panel => (event, expanded) => {
-    this.setState({ expanded: expanded ? panel : false });
-    this.props.updateMap(panel);  //eslint-disable-line
-  };
-
   render() {
     const { earthquakesList } = this.props;  //eslint-disable-line
 
@@ -37,8 +26,8 @@ class ControlledExpansionPanels extends React.Component {
               <ListItem
                 id={id}
                 properties={earthquake.get('properties')}
+                updateMap={this.props.updateMap}  //eslint-disable-line
                 handleChange={this.handleChange}
-                expanded={this.state.expanded === id}
               />
             );
           })
