@@ -1,73 +1,62 @@
 import React, { PureComponent } from 'react';
-
-import { InputLabel } from 'material-ui/Input';
-import { MenuItem } from 'material-ui/Menu';
-import Select from 'material-ui/Select';
-import { FormControl } from 'material-ui/Form';
-import Button from 'material-ui/Button';
-import { DatePicker } from 'material-ui-pickers';
-import { range } from 'lodash';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import Slider from 'react-rangeslider';
+import 'react-datepicker/dist/react-datepicker.css';
 import './Options.css';
 
 
 class Options extends PureComponent {
-  state = {
-    startDate: new Date(),
-    endDate: new Date(),
-    magnitude: 5,
+  componentWillMount() {
+    this.setState({ date: moment(), magnitude: 5 });
   }
 
-  handleStartDateChange = date => this.setState({ startDate: date });
-  handleEndDateChange = date => this.setState({ endDate: date });
-  handleMangnitudeChange = event => this.setState({ magnitude: event.target.value });
-  handleOnClick = () => {
-    console.log("startDate: ", this.state.startDate); // eslint-disable-line
-    console.log("endDate: ", this.state.endDate); // eslint-disable-line
-    console.log("magnitude: ", this.state.magnitude); // eslint-disable-line
+  handleDateChange = (date) => {
+    this.setState({ date });
+    this.props.handleOnClick(date, this.state.magnitude);  // eslint-disable-line
+  }
+
+  handleMangnitudeChange = (magnitude) => {
+    this.setState({ magnitude });
+    this.props.handleOnClick(this.state.date, magnitude);  // eslint-disable-line
   }
 
   render() {
+    const labels = {
+      1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9', 10: '10',
+    };
     return (
-      <form autoComplete="off">
-        <FormControl>
-          <InputLabel htmlFor="magnitude">Magnitude</InputLabel>
-          <Select
-            value={this.state.magnitude}
-            onChange={this.handleMangnitudeChange}
-            inputProps={{
-              name: 'magnitude',
-              id: 'magnitudeSelect',
-            }}
-          >
-            { range(1, 11).map(v => <MenuItem value={v} key={v}>{v}</MenuItem>) }
-          </Select>
-        </FormControl>
-
-        <DatePicker
-          disableFuture
-          format="YYYY-MM-DD"
-          label="Choose start date"
-          minDate="1900-01-01"
-          value={this.state.startDate}
-          onChange={this.handelStartDateChange}
-        />
-
-        <DatePicker
-          disableFuture
-          format="YYYY-MM-DD"
-          label="Choose end date"
-          minDate="1900-01-01"
-          value={this.state.endDate}
-          onChange={this.handleEndDateChange}
-        />
-
-        <Button
-          color="primary"
-          onClick={this.handleOnClick}
-        >
-          Submit
-        </Button>
-      </form>
+      <div className="options">
+        <div className="container">
+          <div className="date">
+            Pick a date:
+            <DatePicker
+              disableFuture
+              locale="en-gb"
+              className="date"
+              dateFormat="YYYY-MM-DD"
+              label="Choose a date"
+              minDate={moment('1900-01-01')}
+              maxDate={moment()}
+              selected={moment(this.state.date)}
+              onChange={this.handleDateChange}
+              showYearDropdown
+              dropdownMode="select"
+            />
+          </div>
+          <div className="mag">
+            Select min magnitude:
+            <Slider
+              min={1}
+              max={10}
+              labels={labels}
+              value={this.state.magnitude}
+              tooltip={false}
+              onChange={this.handleMangnitudeChange}
+            />
+          </div>
+        </div>
+      </div>
     );
   }
 }

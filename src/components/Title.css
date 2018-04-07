@@ -1,6 +1,15 @@
 .header {
-    grid-column: 1 / 3;
-    grid-row: 1 / 2;
-    padding: 5px;
-  }
+  grid-area: head;
+}
   
+.flex-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0px 30px;
+}
+
+.avatar {
+  margin-left: auto;
+}

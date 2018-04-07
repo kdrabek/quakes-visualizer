@@ -40,7 +40,7 @@ describe('handlers', () => {
   });
 
   describe('getting new data', () => {
-    const resp = earthquake.actions.getEarthquakes('2018-03-20', '2018-03-21', 5);
+    const resp = earthquake.actions.getEarthquakes(new Date('2018-03-20'), 5);
 
     it('api.getEarthquakes called once', async () => {
       expect(api.get.mock.calls.length).toBe(1);
