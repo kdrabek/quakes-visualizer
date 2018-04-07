@@ -78,7 +78,7 @@ class RecipeReviewCard extends React.Component {
           <CardContent>
             <div className="list-parent">
               <div className="list-child">
-                <Typography align="center">{properties.get('alert') | 'no info'}</Typography>
+                <Typography align="center">{properties.get('alert') || 'no info'}</Typography>
                 <Typography variant="caption" gutterBottom align="center">Alert</Typography>
               </div>
 
@@ -98,7 +98,7 @@ class RecipeReviewCard extends React.Component {
               </div>
 
               <div className="list-child">
-                <Typography align="center">{properties.get('tsunami') || 'no info'}</Typography>
+                <Typography align="center">{properties.get('tsunami') === 1 ? 'yes' : 'no' || 'no info'}</Typography>
                 <Typography variant="caption" gutterBottom align="center">Tsunami</Typography>
               </div>
 
