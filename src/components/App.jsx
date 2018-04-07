@@ -2,7 +2,10 @@ import React, { PureComponent } from 'react';
 import './App.css';
 
 import Title from './Title';
-import Options from './Options';
+import EarthquakesContainer from '../containers/Earthquakes';
+import EarthquakesMapContainer from '../containers/EarthquakesMap';
+import OptionsCont from '../containers/Options';
+
 
 export default class App extends PureComponent {
   state = {
@@ -10,14 +13,14 @@ export default class App extends PureComponent {
 
   render() {
     return (
-      <div className="wrapper">
-        <Title />
-        <Options />
-
-        <div className="list">
-          Placeholder for earthquakes list.
-        </div>
-        <div className="map">2</div>
+      <div className="grid">
+        <Title
+          text="earthquake browser"
+          url="https://gitlab.com/kdrabek/earthquakes-visualizer"
+        />
+        <OptionsCont />
+        <EarthquakesContainer />
+        <EarthquakesMapContainer />
       </div>
     );
   }

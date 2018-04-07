@@ -5,11 +5,10 @@ exports[`App component should match snapshot 1`] = `
   className="wrapper"
 >
   <Title />
-  <Options />
   <div
     className="list"
   >
-    Placeholder for earthquakes list.
+    <Connect(Earthquakes) />
   </div>
   <div
     className="map"

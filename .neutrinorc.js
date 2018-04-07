@@ -22,9 +22,18 @@ module.exports = {
       }
     ],
     ['neutrino-middleware-html-template', {
+      title: 'earthquake browser',
       links: [
         {
           href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+          rel: 'stylesheet'
+        },
+        {
+          href: 'https://unpkg.com/react-rangeslider/umd/rangeslider.min.css',
+          rel: 'stylesheet'
+        },
+        {
+          href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
           rel: 'stylesheet'
         }
       ]

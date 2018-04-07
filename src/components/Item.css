@@ -1,0 +1,25 @@
+.base {
+    margin-bottom: 0.4rem;
+}
+
+.magnitude-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.list-parent {
+    display: flex;
+	flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 1.5rem;
+}
+  
+.list-child {
+    flex-grow: 1;
+    width: 16%;
+}
+
+.report-link {
+    margin-top: 1rem;
+}

@@ -1,22 +1,15 @@
 body {
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.wrapper {
+.grid {
   display: grid;
   height: 100vh;
-  grid-template-rows: 1fr 1fr 10fr;
+  grid-template-areas: "head     head"
+                       "options  map"
+                       "main     map";
+  grid-template-rows: 2fr 3fr 16fr;
+  grid-template-columns: 2fr 3fr;
 }
 
-.map {
-  background-color: #DD2020;
-  grid-column: 2 / 3;
-  grid-row: 2 / 4;
-}
-
-.list {
-  background-color: #7b6500;
-  grid-column: 1 / 2;
-  grid-row: 3 / 4;
-  overflow: auto;
-}
