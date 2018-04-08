@@ -3,7 +3,7 @@ stages:
 
 tests:
   stage: test
-  image: docker/compose:latest
+  image: docker/compose:1.20.1
   script:
     - docker-compose run --rm tests
   after_script:
