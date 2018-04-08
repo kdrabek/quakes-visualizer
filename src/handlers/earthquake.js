@@ -27,7 +27,7 @@ const initialState = Immutable.fromJS({
 const getFirstCoords = (payload) => {
   if (!payload.isEmpty()) {
     const coords = payload.get(0).get('geometry').get('coordinates');
-    return { lng: coords.get(0), lat: coords.get(1) };
+    return Immutable.fromJS({ lng: coords.get(0), lat: coords.get(1) });
   }
   return null;
 };
@@ -39,16 +39,17 @@ const reducer = handleActions({
 
   GET_EARTHQUAKES_FULFILLED: (state, action) => state
     .update('pending', () => false)
-    .set('data', Immutable.fromJS(action.payload))
-    .set('mapCoords', Immutable.fromJS(getFirstCoords(action.payload))),
+    .set('data', action.payload.get('features'))
+    .set('mapCoords', getFirstCoords(action.payload.get('features'))),
 
   GET_EARTHQUAKES_REJECTED: (state, action) => state
     .update('pending', () => false)
-    .set('error', Immutable.fromJS(action.payload)),
+    .set('error', action.payload),
 
   UPDATE_MAP: (state, action) => {
-    const event = state.get('data').filter(e => e.get('id') === action.payload);
-    return state.set('mapCoords', Immutable.fromJS(getFirstCoords(event)));
+    const event = state.get('data').filter(e =>
+      e.get('id') === action.payload);
+    return state.set('mapCoords', getFirstCoords(event));
   },
 
 }, initialState);

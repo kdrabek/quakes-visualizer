@@ -75,7 +75,7 @@ describe('handlers', () => {
         data: [
           {
             geometry: { coordinates: [167.249, -13.8633] },
-            id: 'usc000lvb5'
+            id: 'usc000lvb5',
           },
         ],
       },
