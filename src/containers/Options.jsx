@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-// import Immutable from 'immutable';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -22,16 +21,12 @@ OptionsContainer.propTypes = propTypes;
 OptionsContainer.displayName = 'OptionsContainer';
 
 export function mapStateToProps(state, props) {
-  return {
-    ...props,
-  };
+  return { ...props };
 }
 
 export function mapDispatchToProps(dispatch) {
   const boundActions = bindActionCreators({ ...handler.actions }, dispatch);
-  return {
-    actions: boundActions,
-  };
+  return { actions: boundActions };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(OptionsContainer);

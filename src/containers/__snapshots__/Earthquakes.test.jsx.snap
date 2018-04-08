@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Container) Options has right actions 1`] = `
+Object {
+  "actions": Object {
+    "getEarthquakes": [Function],
+    "updateMap": [Function],
+  },
+}
+`;
+
+exports[`(Container) Options has right props 1`] = `
+Object {
+  "earthquakes": Immutable.Map {},
+  "mapCoords": undefined,
+}
+`;
+
+exports[`(Container) Options should render 1`] = `
+<ControlledExpansionPanels
+  earthquakesList={Immutable.Map {}}
+  updateMap={[Function]}
+/>
+`;
