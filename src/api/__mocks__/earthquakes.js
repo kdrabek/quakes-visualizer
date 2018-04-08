@@ -53,7 +53,7 @@ export const mockedResponse = {
     bbox: [120.2389, -13.8633, 10.07, 167.249, 19.0868, 187],
   },
 };
-const get = jest.fn(async () => Immutable.fromJS(mockedResponse));
+const get = jest.fn(async () => Immutable.fromJS(mockedResponse.data.features));
 
 export default {
   get,

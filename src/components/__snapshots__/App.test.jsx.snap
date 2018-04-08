@@ -2,18 +2,14 @@
 
 exports[`App component should match snapshot 1`] = `
 <div
-  className="wrapper"
+  className="grid"
 >
-  <Title />
-  <div
-    className="list"
-  >
-    <Connect(Earthquakes) />
-  </div>
-  <div
-    className="map"
-  >
-    2
-  </div>
+  <Title
+    text="earthquake browser"
+    url="https://gitlab.com/kdrabek/earthquakes-visualizer"
+  />
+  <Connect(OptionsContainer) />
+  <Connect(Earthquakes) />
+  <Connect(EarthquakesMap) />
 </div>
 `;

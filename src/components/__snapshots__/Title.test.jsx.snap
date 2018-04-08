@@ -1,11 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Title component should match snapshot 1`] = `
-<WithStyles(Typography)
+<div
   className="header"
-  color="inherit"
-  variant="title"
 >
-  Earthquake Visualizer
-</WithStyles(Typography)>
+  <div
+    className="flex-container"
+  >
+    <WithStyles(Typography)
+      variant="title"
+    />
+    <span
+      className="avatar"
+    >
+      <WithStyles(IconButton)
+        variant="fab"
+      >
+        <i
+          className="fa fa-gitlab"
+        />
+      </WithStyles(IconButton)>
+    </span>
+  </div>
+</div>
 `;
