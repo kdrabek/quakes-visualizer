@@ -7,21 +7,16 @@ import EarthquakesMapContainer from '../containers/EarthquakesMap';
 import OptionsCont from '../containers/Options';
 
 
-export default class App extends PureComponent {
-  state = {
-  };
+const App = props => (
+  <div className="grid">
+    <Title
+      text="earthquake browser"
+      url="https://gitlab.com/kdrabek/earthquakes-visualizer"
+    />
+    <OptionsCont />
+    <EarthquakesContainer />
+    <EarthquakesMapContainer />
+</div>
+);
 
-  render() {
-    return (
-      <div className="grid">
-        <Title
-          text="earthquake browser"
-          url="https://gitlab.com/kdrabek/earthquakes-visualizer"
-        />
-        <OptionsCont />
-        <EarthquakesContainer />
-        <EarthquakesMapContainer />
-      </div>
-    );
-  }
-}
+export default App;

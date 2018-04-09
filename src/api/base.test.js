@@ -53,9 +53,9 @@ describe('makeRequest helper', () => {
   it('returns body on success', () => {
     fetch.mockResponse(jsonResponse, { status: 200 });
     const parsed = JSON.parse(jsonResponse);
+    const expected = Immutable.fromJS(parsed);
 
-    testGetRequest().then(r =>
-      expect(r).toEqual(Immutable.fromJS(parsed)));
+    testGetRequest().then(r => expect(r).toEqual(expected));
   });
 
   it('returns error on failure', () => {

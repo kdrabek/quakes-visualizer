@@ -39,7 +39,7 @@ describe('handlers', () => {
     expect(state.toJS()).toMatchSnapshot();
   });
 
-  describe('getting new data', () => {
+  describe('GET_EARTHQUAKES action getting new data', () => {
     const resp = earthquake.actions.getEarthquakes(new Date('2018-03-20'), 5);
 
     it('api.getEarthquakes called once', async () => {
@@ -64,6 +64,27 @@ describe('handlers', () => {
 
     it('has data in right place when action REJECTED', async () => {
       const newState = reducer(state, await rejectedAction(resp));
+
+      expect(newState).toMatchSnapshot();
+    });
+  });
+
+  describe('UPDATE_MAP action getting new data', () => {
+    const stateWithCoords = reducer(Immutable.fromJS({
+      earthquakes: {
+        data: [
+          {
+            geometry: { coordinates: [167.249, -13.8633] },
+            id: 'usc000lvb5',
+          },
+        ],
+      },
+    }), Immutable.Map());
+
+    const resp = earthquake.actions.updateMap('usc000lvb5');
+
+    it('has data in right place', async () => {
+      const newState = reducer(stateWithCoords, resp);
 
       expect(newState).toMatchSnapshot();
     });

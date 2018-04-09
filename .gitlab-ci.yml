@@ -3,6 +3,9 @@ stages:
 
 tests:
   stage: test
+  image: docker
+  before_script:
+    - apk add --no-cache python py-pip && pip install docker-compose
   script:
     - docker-compose run --rm tests
   after_script:

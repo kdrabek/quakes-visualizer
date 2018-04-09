@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Container) Options has right actions 1`] = `Object {}`;
+
+exports[`(Container) Options has right props 1`] = `
+Object {
+  "mapCoords": undefined,
+}
+`;
+
+exports[`(Container) Options should render 1`] = `<Map />`;
