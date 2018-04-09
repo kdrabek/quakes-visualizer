@@ -3,7 +3,10 @@ import Title from './Title';
 
 
 describe('Title component', () => {
-  const props = {};
+  const props = {
+    text: 'some text',
+    href: 'http://some.link',
+  };
 
   it('should match snapshot', () => {
     const wrapper = shallow(<Title {...props} />);

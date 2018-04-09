@@ -38,7 +38,7 @@ const styles = theme => ({
 const formatFromTimestamp = timestamp =>
   moment(timestamp).format('DD-MM-YYYY HH:mm');
 
-class RecipeReviewCard extends React.Component {
+export class RecipeReviewCard extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {

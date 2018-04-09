@@ -27,7 +27,6 @@ class ControlledExpansionPanels extends React.Component {
                 id={id}
                 properties={earthquake.get('properties')}
                 updateMap={this.props.updateMap}  //eslint-disable-line
-                handleChange={this.handleChange}
               />
             );
           })

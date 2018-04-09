@@ -8,12 +8,17 @@ exports[`Title component should match snapshot 1`] = `
     className="flex-container"
   >
     <WithStyles(Typography)
+      href="http://some.link"
+      text="some text"
       variant="title"
-    />
+    >
+      some text
+    </WithStyles(Typography)>
     <span
       className="avatar"
     >
       <WithStyles(IconButton)
+        href="http://some.link"
         variant="fab"
       >
         <i

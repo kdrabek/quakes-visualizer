@@ -1,12 +1,10 @@
 stages:
   - test
 
-tests:
+test-app:
+  image: node:9.2.0
   stage: test
-  image: docker
   before_script:
-    - apk add --no-cache python py-pip && pip install docker-compose
+    - yarn install
   script:
-    - docker-compose run --rm tests
-  after_script:
-    - docker-compose down
+    - yarn test

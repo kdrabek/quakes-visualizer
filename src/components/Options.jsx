@@ -8,6 +8,7 @@ import './Options.css';
 
 class Options extends PureComponent {
   componentWillMount() {
+    console.log(moment);
     this.setState({ date: moment(), magnitude: 5 });
   }
 
