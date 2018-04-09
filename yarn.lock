@@ -125,6 +125,13 @@
     webpack "^3.10.0"
     webpack-sources "1.0.1"
 
+"@neutrinojs/env@^8.2.1":
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/@neutrinojs/env/-/env-8.2.1.tgz#fd130d914b8861c5382edbd571959905e1779aac"
+  dependencies:
+    webpack "^3.10.0"
+    webpack-sources "1.0.1"
+
 "@neutrinojs/eslint@^8.1.1":
   version "8.1.1"
   resolved "https://registry.yarnpkg.com/@neutrinojs/eslint/-/eslint-8.1.1.tgz#53c49cb96bb118ea1cdb7045b19e053e6398ee7e"

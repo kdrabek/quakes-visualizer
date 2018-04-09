@@ -38,6 +38,9 @@ module.exports = {
         }
       ]
     }],
+    ['@neutrinojs/env', [
+      'EARTHQUAKE_API_URL'
+    ]],
   ],
   options: {
     tests: '/src'

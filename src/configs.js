@@ -1,4 +1,4 @@
-export const earthquakeApiUrl = 'https://earthquake.usgs.gov/fdsnws/event/1';
+export const earthquakeApiUrl = process.env.EARTHQUAKE_API_URL || 'http://localhost:1234';
 
 
 export default {

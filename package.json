@@ -11,6 +11,7 @@
     "test-watch": "neutrino test --watch"
   },
   "dependencies": {
+    "@neutrinojs/env": "^8.2.1",
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.5",
     "enzyme": "^3.3.0",
