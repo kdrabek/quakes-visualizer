@@ -38,6 +38,7 @@
     "react-immutable-proptypes": "^2.1.0",
     "react-rangeslider": "^2.2.0",
     "react-redux": "^5.0.7",
+    "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
     "redux-immutable": "^4.0.0",
