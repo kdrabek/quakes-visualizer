@@ -1,26 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`List component should match snapshot earthquakesList 1`] = `
-<div
-  className="main"
->
-  <WithStyles(RecipeReviewCard)
-    id="some-id"
-    properties={
+<List
+  earthquakesList={
+    Immutable.List [
       Immutable.Map {
-        "mag": 4,
-        "depth": 3.4,
-      }
-    }
-    updateMap={[Function]}
-  />
-</div>
+        "id": "some-id",
+        "properties": Immutable.Map {
+          "mag": 4,
+          "depth": 3.4,
+        },
+      },
+    ]
+  }
+  updateMap={[Function]}
+/>
 `;
 
 exports[`List component should match snapshot when no earthquakes 1`] = `
-<div
-  className="main"
->
-  No Events Found
-</div>
+<renderComponent(Empty)
+  earthquakesList={Immutable.List []}
+/>
 `;

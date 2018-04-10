@@ -17,7 +17,7 @@ Object {
 `;
 
 exports[`(Container) Options should render 1`] = `
-<ControlledExpansionPanels
+<branch(List)
   earthquakesList={Immutable.Map {}}
   updateMap={[Function]}
 />
