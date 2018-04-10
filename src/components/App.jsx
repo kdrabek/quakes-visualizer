@@ -1,22 +1,26 @@
-import React, { PureComponent } from 'react';
-import './App.css';
+import React from 'react';
+import classNames from 'classnames/bind';
 
-import Title from './Title';
 import EarthquakesContainer from '../containers/Earthquakes';
 import EarthquakesMapContainer from '../containers/EarthquakesMap';
-import OptionsCont from '../containers/Options';
+import EarthquakesOptionsContainer from '../containers/Options';
+import Title from './Title';
 
+import styles from './App.css';
 
-const App = props => (
-  <div className="grid">
+const cx = classNames.bind(styles);
+const grid = cx({ grid: true });
+
+const App = () => (
+  <div className={grid}>
     <Title
       text="earthquake browser"
       url="https://gitlab.com/kdrabek/earthquakes-visualizer"
     />
-    <OptionsCont />
+    <EarthquakesOptionsContainer />
     <EarthquakesContainer />
     <EarthquakesMapContainer />
-</div>
+  </div>
 );
 
 export default App;
