@@ -68,11 +68,11 @@ export default compose(
   withHandlers({
     onDateChange: props => (date) => {
       props.setDate(date);
-      props.handleOnClick(date, props.magnitude);
+      props.handleChange(date, props.magnitude);
     },
     onMagnitudeChange: props => (magnitude) => {
       props.setMagnitude(magnitude);
-      props.handleOnClick(props.date, magnitude);
+      props.handleChange(props.date, magnitude);
     },
   }),
 )(Options);

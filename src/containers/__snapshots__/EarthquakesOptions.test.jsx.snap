@@ -13,6 +13,6 @@ exports[`(Container) Options has right props 1`] = `Object {}`;
 
 exports[`(Container) Options should render 1`] = `
 <withState(withState(withHandlers(Options)))
-  handleOnClick={[Function]}
+  handleChange={[Function]}
 />
 `;

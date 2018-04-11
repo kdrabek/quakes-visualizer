@@ -5,7 +5,6 @@ import classNames from 'classnames/bind';
 import { branch, renderComponent } from 'recompose';
 
 import ListItem from './Item';
-
 import styles from './List.css';
 
 const cx = classNames.bind(styles);

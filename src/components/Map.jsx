@@ -8,6 +8,7 @@ import {
   GoogleMap,
   Marker,
 } from 'react-google-maps';
+
 import styles from './Map.css';
 
 const cx = classNames.bind(styles);

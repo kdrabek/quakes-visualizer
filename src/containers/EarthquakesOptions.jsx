@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import handler from '../handlers/earthquake';
-import Options from '../components/Options';
+import OptionsComponent from '../components/Options';
 
 const propTypes = PropTypes && {
   actions: PropTypes.object.isRequired,
@@ -14,7 +14,7 @@ const propTypes = PropTypes && {
 const defaultProps = {};
 
 export const OptionsContainer = ({ actions }) => (
-  <Options handleOnClick={actions.getEarthquakes} />
+  <OptionsComponent handleChange={actions.getEarthquakes} />
 );
 
 export function mapStateToProps(state, props) {
