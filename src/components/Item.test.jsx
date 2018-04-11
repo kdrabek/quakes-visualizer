@@ -1,7 +1,7 @@
 import Immutable from 'immutable';
 import { shallow } from 'enzyme';
 import { mockedResponse } from '../api/__mocks__/earthquakes';
-import Item, { RecipeReviewCard } from './Item';
+import ListItem, { Item } from './Item';
 
 const feature = mockedResponse.data.features[0];
 
@@ -13,7 +13,7 @@ describe('Item component', () => {
       updateMap: () => {},
     };
 
-    const wrapper = shallow(<Item {...props} />);
+    const wrapper = shallow(<ListItem {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -25,7 +25,7 @@ describe('Item component', () => {
       classes: { },
     };
 
-    const wrapper = shallow(<RecipeReviewCard {...props} />);
+    const wrapper = shallow(<Item {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 });

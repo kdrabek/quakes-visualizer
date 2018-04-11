@@ -13,6 +13,7 @@ exports[`Title component should match snapshot 1`] = `
     className="avatar"
   >
     <WithStyles(IconButton)
+      href="http://some.link"
       variant="fab"
     >
       <i

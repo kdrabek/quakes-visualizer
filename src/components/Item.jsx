@@ -16,9 +16,6 @@ const styles = theme => ({
   card: {
     'margin-bottom': '1rem',
   },
-  actions: {
-    display: 'flex',
-  },
   expand: {
     transform: 'rotate(0deg)',
     transition: theme.transitions.create('transform', {
@@ -38,7 +35,7 @@ const styles = theme => ({
 const formatFromTimestamp = timestamp =>
   moment(timestamp).format('DD-MM-YYYY HH:mm');
 
-export class RecipeReviewCard extends React.Component {
+export class Item extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {
@@ -118,8 +115,8 @@ export class RecipeReviewCard extends React.Component {
   }
 }
 
-RecipeReviewCard.propTypes = {
+Item.propTypes = {
   classes: PropTypes.object.isRequired,  //eslint-disable-line
 };
 
-export default withStyles(styles)(RecipeReviewCard);
+export default withStyles(styles)(Item);

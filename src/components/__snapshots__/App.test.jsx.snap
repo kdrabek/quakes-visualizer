@@ -9,7 +9,7 @@ exports[`App component should match snapshot 1`] = `
     url="https://gitlab.com/kdrabek/earthquakes-visualizer"
   />
   <Connect(OptionsContainer) />
-  <Connect(Earthquakes) />
+  <Connect(lifecycle(branch(Earthquakes))) />
   <Connect(EarthquakesMap) />
 </div>
 `;

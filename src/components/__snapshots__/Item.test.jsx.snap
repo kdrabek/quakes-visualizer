@@ -1,14 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Item component should match snapshot when collapsed 1`] = `
-<RecipeReviewCard
+<Item
   classes={
     Object {
-      "actions": "RecipeReviewCard-actions-2",
-      "avatar": "RecipeReviewCard-avatar-5",
-      "card": "RecipeReviewCard-card-1",
-      "expand": "RecipeReviewCard-expand-3",
-      "expandOpen": "RecipeReviewCard-expandOpen-4",
+      "avatar": "Item-avatar-4",
+      "card": "Item-card-1",
+      "expand": "Item-expand-2",
+      "expandOpen": "Item-expandOpen-3",
     }
   }
   id="usc000lvb5"
