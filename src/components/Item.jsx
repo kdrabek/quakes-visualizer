@@ -13,7 +13,7 @@ import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 import styles from './Item.css';
 
 const cx = classNames.bind(styles);
-const card = cx({ card: true });
+const itemCard = cx({ 'item-card': true });
 const expand = cx({ expand: true });
 const magnitudeAvatar = cx({ 'magnitude-avatar': true });
 const listParent = cx({ 'list-parent': true });
@@ -45,7 +45,7 @@ export class Item extends React.Component {
     const { properties } = this.props;
     const buttonClassName = classNames(expand, { 'expand-open': this.state.expanded });
     return (
-      <Card className={card}>
+      <Card className={itemCard}>
         <CardHeader
           avatar={
             <Avatar className={magnitudeAvatar}>{properties.get('mag')}</Avatar>

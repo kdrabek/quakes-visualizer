@@ -2,7 +2,7 @@
 
 exports[`Item component should match snapshot when collapsed 1`] = `
 <Card
-  className="card"
+  className="item-card"
   raised={false}
 >
   <WithStyles(CardHeader)
@@ -155,7 +155,7 @@ exports[`Item component should match snapshot when collapsed 1`] = `
 
 exports[`Item component should match snapshot when expanded 1`] = `
 <Card
-  className="card"
+  className="item-card"
   raised={false}
 >
   <WithStyles(CardHeader)

@@ -24,20 +24,15 @@
   margin-top: 1rem;
 }
 
-.card {
-  margin-bottom: '1rem';
+.item-card {
+  margin-bottom: 1rem;
 }
 
 .expand {
-  transform: 'rotate(0deg)';
-  margin-left: 'auto';
+  transform: rotate(0deg);
+  margin-left: auto;
 }
 
 .expand-open {
-  transform: 'rotate(180deg)';
-}
-
-.magnitude-avatar {
-  background: rgba(223, 20, 20, 0.781);
-  font-size: '1rem',
+  transform: rotate(180deg);
 }
