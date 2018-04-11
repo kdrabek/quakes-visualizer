@@ -22,7 +22,7 @@ const listChild = cx({ 'list-child': true });
 const formatTimestamp = timestamp => moment(timestamp).format('LTS, L');
 
 const propTypes = PropTypes && {
-  earthquakesList: ImmutablePropTypes.list.isRequired,
+  properties: ImmutablePropTypes.map.isRequired,
   updateMap: PropTypes.func.isRequired,
 };
 const defaultProps = {};
@@ -42,9 +42,7 @@ export class Item extends React.Component {
   handleExpandClick = () => this.setState({ expanded: !this.state.expanded });
 
   render() {
-    const {
-      properties,  //eslint-disable-line
-    } = this.props;
+    const { properties } = this.props;
     const buttonClassName = classNames(expand, { 'expand-open': this.state.expanded });
     return (
       <Card className={card}>
@@ -72,7 +70,7 @@ export class Item extends React.Component {
                 Object.entries(propertiesMapping).map((pair) => {
                   const [prop, descr] = pair;
                   return (
-                    <div className={listChild}>
+                    <div className={listChild} key={`${this.props.id}-${prop}`}>
                       <Typography align="center">{properties.get(prop) || 'no info'}</Typography>
                       <Typography variant="caption" gutterBottom align="center">{descr}</Typography>
                     </div>

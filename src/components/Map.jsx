@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 const wrapper = cx({ wrapper: true });
 
 const propTypes = PropTypes && {
-  mapCoords: ImmutablePropTypes.map.isRequired,
+  mapCoords: ImmutablePropTypes.map,
 };
 const defaultProps = {};
 
@@ -29,8 +29,7 @@ export const Map = withScriptjs(withGoogleMap((props) => {  //eslint-disable-lin
   );
 }));
 
-const EnhancedMap = (props) => {
-  const { mapCoords } = props;
+const EnhancedMap = ({ mapCoords }) => {
   const center = mapCoords || Immutable.fromJS({ lat: 51.28, lng: 0.00 });
   const centerJS = center.toJS();
   return (

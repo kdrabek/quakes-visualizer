@@ -23,6 +23,7 @@ const List = ({ earthquakesList, updateMap }) => (
     {
       earthquakesList.map(earthquake => (
         <ListItem
+          key={earthquake.get('id')}
           id={earthquake.get('id')}
           properties={earthquake.get('properties')}
           updateMap={updateMap}  //eslint-disable-line

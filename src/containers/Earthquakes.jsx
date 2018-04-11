@@ -12,7 +12,7 @@ import List from '../components/List';
 
 const propTypes = PropTypes && {
   actions: PropTypes.object.isRequired,
-  earthquakes: ImmutablePropTypes.list,
+  earthquakes: ImmutablePropTypes.list.isRequired,
 };
 
 export const Earthquakes = ({ earthquakes, actions }) => (

@@ -37,6 +37,7 @@ exports[`Item component should match snapshot when collapsed 1`] = `
       >
         <div
           className="list-child"
+          key="usc000lvb5-alert"
         >
           <WithStyles(Typography)
             align="center"
@@ -53,6 +54,7 @@ exports[`Item component should match snapshot when collapsed 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-cdi"
         >
           <WithStyles(Typography)
             align="center"
@@ -69,6 +71,7 @@ exports[`Item component should match snapshot when collapsed 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-depth"
         >
           <WithStyles(Typography)
             align="center"
@@ -85,6 +88,7 @@ exports[`Item component should match snapshot when collapsed 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-felt"
         >
           <WithStyles(Typography)
             align="center"
@@ -101,6 +105,7 @@ exports[`Item component should match snapshot when collapsed 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-tsunami"
         >
           <WithStyles(Typography)
             align="center"
@@ -117,6 +122,7 @@ exports[`Item component should match snapshot when collapsed 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-type"
         >
           <WithStyles(Typography)
             align="center"
@@ -184,6 +190,7 @@ exports[`Item component should match snapshot when expanded 1`] = `
       >
         <div
           className="list-child"
+          key="usc000lvb5-alert"
         >
           <WithStyles(Typography)
             align="center"
@@ -200,6 +207,7 @@ exports[`Item component should match snapshot when expanded 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-cdi"
         >
           <WithStyles(Typography)
             align="center"
@@ -216,6 +224,7 @@ exports[`Item component should match snapshot when expanded 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-depth"
         >
           <WithStyles(Typography)
             align="center"
@@ -232,6 +241,7 @@ exports[`Item component should match snapshot when expanded 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-felt"
         >
           <WithStyles(Typography)
             align="center"
@@ -248,6 +258,7 @@ exports[`Item component should match snapshot when expanded 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-tsunami"
         >
           <WithStyles(Typography)
             align="center"
@@ -264,6 +275,7 @@ exports[`Item component should match snapshot when expanded 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-type"
         >
           <WithStyles(Typography)
             align="center"

@@ -14,7 +14,7 @@ const grid = cx({ grid: true });
 const App = () => (
   <div className={grid}>
     <Title
-      text="earthquake browser"
+      text="earthquakes visualizer"
       url="https://gitlab.com/kdrabek/earthquakes-visualizer"
     />
     <EarthquakesOptionsContainer />

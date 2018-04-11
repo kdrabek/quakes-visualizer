@@ -17,8 +17,10 @@ const options = cx({ options: true });
 const optionsContainer = cx({ container: true });
 
 const propTypes = PropTypes && {
-  text: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  date: PropTypes.object.isRequired,
+  magnitude: PropTypes.number.isRequired,
+  onDateChange: PropTypes.func.isRequired,
+  onMagnitudeChange: PropTypes.func.isRequired,
 };
 const defaultProps = {};
 
