@@ -38,15 +38,15 @@ export function mapDispatchToProps(dispatch) {
   return { actions: boundActions };
 }
 
-export default compose(  //eslint-disable-line
+export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   lifecycle({
     componentDidMount() {
       this.props.actions.getEarthquakes(new Date(), 5);
     },
   }),
-  branch(  //eslint-disable-line
+  branch(
     ({ earthquakes }) => earthquakes.pending,
     renderComponent(CircularProgress),
-  ),  //eslint-disable-line
-)(Earthquakes);  //eslint-disable-line
+  ),
+)(Earthquakes);

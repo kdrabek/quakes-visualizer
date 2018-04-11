@@ -19,7 +19,7 @@ const propTypes = PropTypes && {
 const defaultProps = {};
 
 
-export const Map = withScriptjs(withGoogleMap((props) => {  //eslint-disable-line
+export const Map = withScriptjs(withGoogleMap((props) => {
   const { center, isMarkerShown } = props;
   return (
     <GoogleMap {...props}>

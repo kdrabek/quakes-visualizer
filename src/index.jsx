@@ -13,7 +13,7 @@ import App from './components/App';
 import handler from './handlers/earthquake';
 
 
-const initialState = Immutable.Map();  //eslint-disable-line
+const initialState = Immutable.Map(); //eslint-disable-line
 const reducers = combineReducers({
   earthquakes: handler.reducer,
 });
