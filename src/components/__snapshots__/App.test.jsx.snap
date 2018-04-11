@@ -5,11 +5,11 @@ exports[`App component should match snapshot 1`] = `
   className="grid"
 >
   <Title
-    text="earthquake browser"
+    text="earthquakes visualizer"
     url="https://gitlab.com/kdrabek/earthquakes-visualizer"
   />
   <Connect(OptionsContainer) />
-  <Connect(Earthquakes) />
+  <Connect(lifecycle(branch(Earthquakes))) />
   <Connect(EarthquakesMap) />
 </div>
 `;

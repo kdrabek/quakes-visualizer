@@ -1,78 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Options component should match snapshot 1`] = `
-<div
-  className="options"
->
-  <div
-    className="container"
-  >
-    <div
-      className="date"
-    >
-      Pick a date:
-      <DatePicker
-        allowSameDay={false}
-        className="date"
-        dateFormat="YYYY-MM-DD"
-        dateFormatCalendar="MMMM YYYY"
-        disableFuture={true}
-        disabled={false}
-        disabledKeyboardNavigation={false}
-        dropdownMode="select"
-        label="Choose a date"
-        locale="en-gb"
-        maxDate="2018–04–09T12:34:56+00:00"
-        minDate="2018–04–09T12:34:56+00:00"
-        monthsShown={1}
-        onBlur={[Function]}
-        onChange={[Function]}
-        onClickOutside={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onMonthChange={[Function]}
-        onSelect={[Function]}
-        onYearChange={[Function]}
-        preventOpenOnFocus={false}
-        selected="2018–04–09T12:34:56+00:00"
-        shouldCloseOnSelect={true}
-        showTimeSelect={false}
-        showYearDropdown={true}
-        timeCaption="Time"
-        timeIntervals={30}
-        withPortal={false}
-      />
-    </div>
-    <div
-      className="mag"
-    >
-      Select min magnitude:
-      <Slider
-        handleLabel=""
-        labels={
-          Object {
-            "1": "1",
-            "10": "10",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-          }
-        }
-        max={10}
-        min={1}
-        onChange={[Function]}
-        orientation="horizontal"
-        reverse={false}
-        step={1}
-        tooltip={false}
-        value={5}
-      />
-    </div>
-  </div>
-</div>
+<withState(withHandlers(Options))
+  date="2018–04–09T12:34:56+00:00"
+  setDate={[Function]}
+/>
 `;

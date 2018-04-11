@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 import {
   OptionsContainer, mapStateToProps, mapDispatchToProps,
-} from './Options';
+} from './EarthquakesOptions';
 
 describe('(Container) Options', () => {
   const state = Immutable.Map();

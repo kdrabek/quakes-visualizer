@@ -1,61 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Item component should match snapshot when collapsed 1`] = `
-<RecipeReviewCard
-  classes={
-    Object {
-      "actions": "RecipeReviewCard-actions-2",
-      "avatar": "RecipeReviewCard-avatar-5",
-      "card": "RecipeReviewCard-card-1",
-      "expand": "RecipeReviewCard-expand-3",
-      "expandOpen": "RecipeReviewCard-expandOpen-4",
-    }
-  }
-  id="usc000lvb5"
-  properties={
-    Immutable.Map {
-      "tsunami": 1,
-      "tz": 660,
-      "place": "32km W of Sola, Vanuatu",
-      "felt": null,
-      "cdi": null,
-      "mmi": 4.84,
-      "code": "c000lvb5",
-      "time": 1388592209000,
-      "magType": "mww",
-      "dmin": 3.997,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usc000lvb5",
-      "nst": null,
-      "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usc000lvb5&format=geojson",
-      "sig": 650,
-      "status": "reviewed",
-      "mag": 6.5,
-      "gap": 14,
-      "rms": 0.76,
-      "title": "M 6.5 - 32km W of Sola, Vanuatu",
-      "ids": ",at00myqcls,pt14001000,usc000lvb5,",
-      "sources": ",at,pt,us,",
-      "types": ",cap,geoserve,impact-link,losspager,moment-tensor,moment-tensor,moment-tensor,moment-tensor,nearby-cities,origin,phase-data,shakemap,tectonic-summary,",
-      "type": "earthquake",
-      "updated": 1394151955000,
-      "alert": "green",
-      "net": "us",
-    }
-  }
-  updateMap={[Function]}
-/>
-`;
-
-exports[`Item component should match snapshot when expanded 1`] = `
 <Card
+  className="item-card"
   raised={false}
 >
   <WithStyles(CardHeader)
     action={
       <WithStyles(IconButton)
         aria-expanded={false}
-        aria-label="Show more"
-        className=""
+        className="expand"
         onClick={[Function]}
       >
         <pure(ExpandMore) />
@@ -63,14 +17,13 @@ exports[`Item component should match snapshot when expanded 1`] = `
     }
     avatar={
       <WithStyles(Avatar)
-        aria-label="Recipe"
-        className={undefined}
+        className="magnitude-avatar"
       >
         6.5
       </WithStyles(Avatar)>
     }
     onClick={[Function]}
-    subheader="01-01-2014 16:03"
+    subheader="4:03:29 PM, 01/01/2014"
     title="32km W of Sola, Vanuatu"
   />
   <WithStyles(Collapse)
@@ -84,6 +37,7 @@ exports[`Item component should match snapshot when expanded 1`] = `
       >
         <div
           className="list-child"
+          key="usc000lvb5-alert"
         >
           <WithStyles(Typography)
             align="center"
@@ -100,6 +54,7 @@ exports[`Item component should match snapshot when expanded 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-cdi"
         >
           <WithStyles(Typography)
             align="center"
@@ -116,6 +71,7 @@ exports[`Item component should match snapshot when expanded 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-depth"
         >
           <WithStyles(Typography)
             align="center"
@@ -132,6 +88,7 @@ exports[`Item component should match snapshot when expanded 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-felt"
         >
           <WithStyles(Typography)
             align="center"
@@ -148,11 +105,12 @@ exports[`Item component should match snapshot when expanded 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-tsunami"
         >
           <WithStyles(Typography)
             align="center"
           >
-            yes
+            1
           </WithStyles(Typography)>
           <WithStyles(Typography)
             align="center"
@@ -164,6 +122,7 @@ exports[`Item component should match snapshot when expanded 1`] = `
         </div>
         <div
           className="list-child"
+          key="usc000lvb5-type"
         >
           <WithStyles(Typography)
             align="center"
@@ -184,7 +143,160 @@ exports[`Item component should match snapshot when expanded 1`] = `
       >
         Report link: 
         <a
-          href="{properties.get('url')}"
+          href="https://earthquake.usgs.gov/earthquakes/eventpage/usc000lvb5"
+        >
+          https://earthquake.usgs.gov/earthquakes/eventpage/usc000lvb5
+        </a>
+      </WithStyles(Typography)>
+    </WithStyles(CardContent)>
+  </WithStyles(Collapse)>
+</Card>
+`;
+
+exports[`Item component should match snapshot when expanded 1`] = `
+<Card
+  className="item-card"
+  raised={false}
+>
+  <WithStyles(CardHeader)
+    action={
+      <WithStyles(IconButton)
+        aria-expanded={false}
+        className="expand"
+        onClick={[Function]}
+      >
+        <pure(ExpandMore) />
+      </WithStyles(IconButton)>
+    }
+    avatar={
+      <WithStyles(Avatar)
+        className="magnitude-avatar"
+      >
+        6.5
+      </WithStyles(Avatar)>
+    }
+    onClick={[Function]}
+    subheader="4:03:29 PM, 01/01/2014"
+    title="32km W of Sola, Vanuatu"
+  />
+  <WithStyles(Collapse)
+    in={false}
+    timeout="auto"
+    unmountOnExit={true}
+  >
+    <WithStyles(CardContent)>
+      <div
+        className="list-parent"
+      >
+        <div
+          className="list-child"
+          key="usc000lvb5-alert"
+        >
+          <WithStyles(Typography)
+            align="center"
+          >
+            green
+          </WithStyles(Typography)>
+          <WithStyles(Typography)
+            align="center"
+            gutterBottom={true}
+            variant="caption"
+          >
+            Alert
+          </WithStyles(Typography)>
+        </div>
+        <div
+          className="list-child"
+          key="usc000lvb5-cdi"
+        >
+          <WithStyles(Typography)
+            align="center"
+          >
+            no info
+          </WithStyles(Typography)>
+          <WithStyles(Typography)
+            align="center"
+            gutterBottom={true}
+            variant="caption"
+          >
+            Intensity
+          </WithStyles(Typography)>
+        </div>
+        <div
+          className="list-child"
+          key="usc000lvb5-depth"
+        >
+          <WithStyles(Typography)
+            align="center"
+          >
+            no info
+          </WithStyles(Typography)>
+          <WithStyles(Typography)
+            align="center"
+            gutterBottom={true}
+            variant="caption"
+          >
+            Depth
+          </WithStyles(Typography)>
+        </div>
+        <div
+          className="list-child"
+          key="usc000lvb5-felt"
+        >
+          <WithStyles(Typography)
+            align="center"
+          >
+            no info
+          </WithStyles(Typography)>
+          <WithStyles(Typography)
+            align="center"
+            gutterBottom={true}
+            variant="caption"
+          >
+            Felt Reports
+          </WithStyles(Typography)>
+        </div>
+        <div
+          className="list-child"
+          key="usc000lvb5-tsunami"
+        >
+          <WithStyles(Typography)
+            align="center"
+          >
+            1
+          </WithStyles(Typography)>
+          <WithStyles(Typography)
+            align="center"
+            gutterBottom={true}
+            variant="caption"
+          >
+            Tsunami
+          </WithStyles(Typography)>
+        </div>
+        <div
+          className="list-child"
+          key="usc000lvb5-type"
+        >
+          <WithStyles(Typography)
+            align="center"
+          >
+            earthquake
+          </WithStyles(Typography)>
+          <WithStyles(Typography)
+            align="center"
+            gutterBottom={true}
+            variant="caption"
+          >
+            Type
+          </WithStyles(Typography)>
+        </div>
+      </div>
+      <WithStyles(Typography)
+        align="right"
+      >
+        Report link: 
+        <a
+          href="https://earthquake.usgs.gov/earthquakes/eventpage/usc000lvb5"
         >
           https://earthquake.usgs.gov/earthquakes/eventpage/usc000lvb5
         </a>

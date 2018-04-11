@@ -2,30 +2,24 @@
 
 exports[`Title component should match snapshot 1`] = `
 <div
-  className="header"
+  className="header flex-container"
 >
-  <div
-    className="flex-container"
+  <WithStyles(Typography)
+    variant="title"
   >
-    <WithStyles(Typography)
+    some text
+  </WithStyles(Typography)>
+  <span
+    className="avatar"
+  >
+    <WithStyles(IconButton)
       href="http://some.link"
-      text="some text"
-      variant="title"
+      variant="fab"
     >
-      some text
-    </WithStyles(Typography)>
-    <span
-      className="avatar"
-    >
-      <WithStyles(IconButton)
-        href="http://some.link"
-        variant="fab"
-      >
-        <i
-          className="fa fa-gitlab"
-        />
-      </WithStyles(IconButton)>
-    </span>
-  </div>
+      <i
+        className="fa fa-gitlab"
+      />
+    </WithStyles(IconButton)>
+  </span>
 </div>
 `;

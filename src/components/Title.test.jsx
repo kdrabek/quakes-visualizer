@@ -5,7 +5,7 @@ import Title from './Title';
 describe('Title component', () => {
   const props = {
     text: 'some text',
-    href: 'http://some.link',
+    url: 'http://some.link',
   };
 
   it('should match snapshot', () => {

@@ -6,29 +6,28 @@ import { Typography } from 'material-ui';
 import styles from './Title.css';
 
 const cx = classNames.bind(styles);
-const header = cx({ header: true });
+
+const header = cx({ header: true, 'flex-container': true });
 const avatar = cx({ avatar: true });
 const gitlab = cx({ fa: true, 'fa-gitlab': true });
 
 const propTypes = PropTypes && {
   text: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 };
 const defaultProps = {};
 
 
-const Title = props => (
+const Title = ({ text, url }) => (
   <div className={header}>
-    <div className="flex-container">
-      <Typography variant="title" {...props} >
-        {props.text}
-      </Typography>
-      <span className={avatar}>
-        <IconButton variant="fab" href={props.href}>
-          <i className={gitlab} />
-        </IconButton>
-      </span>
-    </div>
+    <Typography variant="title">
+      {text}
+    </Typography>
+    <span className={avatar}>
+      <IconButton variant="fab" href={url}>
+        <i className={gitlab} />
+      </IconButton>
+    </span>
   </div>
 );
 

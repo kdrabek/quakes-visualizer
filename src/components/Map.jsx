@@ -1,6 +1,5 @@
 import { PropTypes } from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
-import Immutable from 'immutable';
 import classNames from 'classnames/bind';
 import {
   withScriptjs,
@@ -8,34 +7,33 @@ import {
   GoogleMap,
   Marker,
 } from 'react-google-maps';
+
 import styles from './Map.css';
 
 const cx = classNames.bind(styles);
 const wrapper = cx({ wrapper: true });
 
 const propTypes = PropTypes && {
-  mapCoords: ImmutablePropTypes.map.isRequired,
+  mapCoords: ImmutablePropTypes.map,
 };
 const defaultProps = {};
 
 
-export const Map = withScriptjs(withGoogleMap((props) => {  //eslint-disable-line
-  const { center } = props;
+export const Map = withScriptjs(withGoogleMap((props) => {
+  const { center, isMarkerShown } = props;
   return (
     <GoogleMap {...props}>
-      { center && <Marker position={center} /> }
+      { isMarkerShown && <Marker position={center} /> }
     </GoogleMap>
   );
 }));
 
-const EnhancedMap = (props) => {
-  const { mapCoords } = props;
-  const center = mapCoords || Immutable.fromJS({ lat: 51.28, lng: 0.00 });
-  const centerJS = center.toJS();
+const EnhancedMap = ({ mapCoords }) => {
+  const center = mapCoords ? mapCoords.toJS() : null;
   return (
     <Map
-      isMarkerShown
-      center={centerJS}
+      isMarkerShown={Boolean(center)}
+      center={center}
       loadingElement={<div className={wrapper} />}
       containerElement={<div className={wrapper} />}
       mapElement={<div className={wrapper} />}

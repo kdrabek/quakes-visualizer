@@ -2,12 +2,7 @@
 
 exports[`EnhancedMap component should match snapshot when coords not passed 1`] = `
 <withScriptjs(withGoogleMap(Component))
-  center={
-    Object {
-      "lat": 51.28,
-      "lng": 0,
-    }
-  }
+  center={null}
   containerElement={
     <div
       className="wrapper"
@@ -15,7 +10,7 @@ exports[`EnhancedMap component should match snapshot when coords not passed 1`] 
   }
   defaultZoom={5}
   googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-  isMarkerShown={true}
+  isMarkerShown={false}
   loadingElement={
     <div
       className="wrapper"

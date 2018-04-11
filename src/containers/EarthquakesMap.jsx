@@ -1,23 +1,19 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-// import Immutable from 'immutable';
-import ImmutablePropTypes from 'react-immutable-proptypes';
 import { connect } from 'react-redux';
-import MyMap from '../components/Map';
+
+import GoogleMap from '../components/Map';
 
 
 const propTypes = PropTypes && {
-  mapCoords: ImmutablePropTypes.object,
+  mapCoords: PropTypes.object,
 };
+const defaultProps = {};
 
-export class EarthquakesMap extends PureComponent {  //eslint-disable-line
-  render() {
-    return <MyMap mapCoords={this.props.mapCoords} />;
-  }
-}
 
-EarthquakesMap.propTypes = propTypes;
-EarthquakesMap.displayName = 'EarthquakesMap';
+export const EarthquakesMap = ({ mapCoords }) => (
+  <GoogleMap mapCoords={mapCoords} />
+);
 
 export function mapStateToProps(state, props) {
   return {
@@ -29,5 +25,9 @@ export function mapStateToProps(state, props) {
 export function mapDispatchToProps() {
   return {};
 }
+
+EarthquakesMap.displayName = 'EarthquakesMap';
+EarthquakesMap.propTypes = propTypes;
+EarthquakesMap.defaultProps = defaultProps;
 
 export default connect(mapStateToProps, mapDispatchToProps)(EarthquakesMap);

@@ -22,7 +22,7 @@ module.exports = {
       }
     ],
     ['neutrino-middleware-html-template', {
-      title: 'earthquake browser',
+      title: 'earthquakes visualizer',
       links: [
         {
           href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
