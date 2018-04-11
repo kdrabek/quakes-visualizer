@@ -4,8 +4,8 @@ import classNames from 'classnames/bind';
 import EarthquakesContainer from '../containers/Earthquakes';
 import EarthquakesMapContainer from '../containers/EarthquakesMap';
 import EarthquakesOptionsContainer from '../containers/Options';
-import Title from './Title';
 
+import Title from './Title';
 import styles from './App.css';
 
 const cx = classNames.bind(styles);

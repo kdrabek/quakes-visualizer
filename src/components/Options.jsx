@@ -1,65 +1,78 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import Slider from 'react-rangeslider';
+import { PropTypes } from 'prop-types';
+import classNames from 'classnames/bind';
+import { range, fromPairs } from 'lodash';
+import { withState, withHandlers, compose } from 'recompose';
+
 import 'react-datepicker/dist/react-datepicker.css';
-import './Options.css';
+import styles from './Options.css';
 
+const cx = classNames.bind(styles);
+const optionsDate = cx({ date: true });
+const optionsMagnitude = cx({ mag: true });
+const options = cx({ options: true });
+const optionsContainer = cx({ container: true });
 
-class Options extends PureComponent {
-  componentWillMount() {
-    console.log(moment);
-    this.setState({ date: moment(), magnitude: 5 });
-  }
+const propTypes = PropTypes && {
+  text: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+};
+const defaultProps = {};
 
-  handleDateChange = (date) => {
-    this.setState({ date });
-    this.props.handleOnClick(date, this.state.magnitude);  // eslint-disable-line
-  }
+const magnitudeLabels = fromPairs(range(1, 11).map(v => [v, v.toString()]));
 
-  handleMangnitudeChange = (magnitude) => {
-    this.setState({ magnitude });
-    this.props.handleOnClick(this.state.date, magnitude);  // eslint-disable-line
-  }
+export const Options = props => (
+  <div className={options}>
+    <div className={optionsContainer}>
+      <span className={optionsDate}>
+        Pick a date:
+        <DatePicker
+          disableFuture
+          locale="en-gb"
+          className="date"
+          dateFormat="YYYY-MM-DD"
+          label="Choose a date"
+          minDate={moment('1900-01-01')}
+          maxDate={moment()}
+          selected={moment(props.date)}
+          onChange={props.onDateChange}
+          showYearDropdown
+          dropdownMode="select"
+        />
+      </span>
+      <span className={optionsMagnitude}>
+        Select min magnitude:
+        <Slider
+          min={1}
+          max={10}
+          labels={magnitudeLabels}
+          value={props.magnitude}
+          tooltip={false}
+          onChange={props.onMagnitudeChange}
+        />
+      </span>
+    </div>
+  </div>
+);
 
-  render() {
-    const labels = {
-      1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9', 10: '10',
-    };
-    return (
-      <div className="options">
-        <div className="container">
-          <div className="date">
-            Pick a date:
-            <DatePicker
-              disableFuture
-              locale="en-gb"
-              className="date"
-              dateFormat="YYYY-MM-DD"
-              label="Choose a date"
-              minDate={moment('1900-01-01')}
-              maxDate={moment()}
-              selected={moment(this.state.date)}
-              onChange={this.handleDateChange}
-              showYearDropdown
-              dropdownMode="select"
-            />
-          </div>
-          <div className="mag">
-            Select min magnitude:
-            <Slider
-              min={1}
-              max={10}
-              labels={labels}
-              value={this.state.magnitude}
-              tooltip={false}
-              onChange={this.handleMangnitudeChange}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
+Options.displayName = 'Options';
+Options.propTypes = propTypes;
+Options.defaultProps = defaultProps;
 
-export default Options;
+export default compose(
+  withState('date', 'setDate', moment()),
+  withState('magnitude', 'setMagnitude', 5),
+  withHandlers({
+    onDateChange: props => (date) => {
+      props.setDate(date);
+      props.handleOnClick(date, props.magnitude);
+    },
+    onMagnitudeChange: props => (magnitude) => {
+      props.setMagnitude(magnitude);
+      props.handleOnClick(props.date, magnitude);
+    },
+  }),
+)(Options);
